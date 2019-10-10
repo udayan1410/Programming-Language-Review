@@ -1,0 +1,61 @@
+<html>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<body>
+
+<div class="fontbg"><b>Pointer - </b></div> A pointer is a variable whose value is the address of another variable, i.e., direct address of the memory location. Like any variable or constant, you must declare a pointer before using it to store any variable address.<br>
+<br>
+<div class="fontbg"><u>Pointer variable declaration :</u></div> <div id="border">datatype *variable_name;</div><br>
+Here, datatype is the pointer's base type, it must be a valid C data type and variable_name is the name of the pointer variable. The asterisk (*) is used to designate a variable as a pointer.<br>
+There are a few important operations, which we will do with the help of pointers very frequently. We define a pointer variable, assign the address of a variable to a pointer and finally access the value at the address available in the pointer variable. This is done by using unary operator * that returns the value of the variable located at the address specified by its operand.<br>
+<br>
+<br>
+<div class="fontbg"><u>Null pointer-</u></div> 
+ A pointer that is assigned NULL is called a null pointer.
+ If a pointer contains the null (zero) value, it is assumed to point to nothing.<br>
+To check for a null pointer, you can use an 'if' statement as follows − <br>
+<div id="border">
+    if(ptr)&nbsp;&nbsp;&nbsp;&nbsp;/* succeeds if p is not null */<br>
+    if(!ptr)&nbsp;&nbsp;&nbsp;&nbsp;/* succeeds if p is null */<br>
+	</div><br>
+<br>
+
+The following important pointer concepts should be clear to any C++ programmer − <br>
+<ul>
+<div class="fontbg"><u><li>Pointer arithmetic -</li></u></div>
+There are four arithmetic operators that can be used in pointers: ++, --, +, -.<br>
+<br>
+<div class="fontbg"><u><li>Array of pointers -</li></u></div>
+You can define arrays to hold a number of pointers.<br>
+<br>
+<div class="fontbg"><u><li>Pointer to pointer -</li></u></div>
+C allows you to have pointer on a pointer and so on.<br>
+<br>
+<div class="fontbg"><u><li>Passing pointers to functions in C -</li></u></div>
+Passing an argument by reference or by address enable the passed argument to be changed in the calling function by the called function.<br>
+<br>
+<div class="fontbg"><u><li>Pointer to structure -</li></u></div>
+Like primitive types, we can have pointer to a structure. If we have a pointer to structure, members are accessed using arrow ( -> ) operator.
+</ul>
+</body>
+</html>

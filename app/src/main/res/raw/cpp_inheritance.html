@@ -1,0 +1,117 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Inheritance</b></div><br>
+One of the most important concepts in object-oriented programming is that of inheritance. 
+The capability of a class to derive properties and characteristics from another class is called as Inheritance. 
+<br>
+When creating a class, instead of writing completely new data members and member functions, the programmer can designate that the new class should inherit the members of an existing class. This existing class is called the base class or parent class, and the new class is referred to as the derived class or child class. The derived class inherits the properties of base class.
+<br>
+There are 5 types of inheritance, namely:
+<br><b>1)Single inheritance</b>
+<br><b>2)Multilevel inheritance</b>
+<br><b>3)Multiple inheritance</b>
+<br><b>4)Hierarchical inheritance</b>
+<br><b>5)Hybrid inheritance</b>
+
+<br><br>
+<b>1)Single inheritance -</b>
+In single inheritance, a class is allowed to inherit from only one class. i.e. only one base class is inherited by a derived class.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+class A
+{ ... };
+class B: public A
+{ ... };
+</pre>
+</div><br>
+
+<b>2)Multilevel inheritance -</b>
+In this type of inheritance, a derived class is created from another derived class.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+class A
+{ ... };
+class B: public A
+{ ... };
+class C: public B
+{ ... };
+</pre>
+</div><br>
+
+<b>3)Multiple inheritance -</b>
+Multiple Inheritance is a feature of C++ where a class can inherit from more than one classes. i.e one derived class is inherited from more than one base classes.
+Here, the number of base classes will be separated by a comma (,) and access mode for every base class must be specified.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+class A
+{ ... };
+class B
+{ ... };
+class C: public A, public B
+{ ... };
+</div><br>
+
+<b>4)Hierarchical inheritance -</b>
+In this type of inheritance, more than one derived class is created from a single base class.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+class A
+{ ... };
+class B: public A
+{ ... };
+class C: public A
+{ ... };
+class D: public A
+{ ... };
+</pre>
+</div><br>
+
+<b>5)Hybrid inheritance -</b>
+Hybrid inheritance is implemented by combining any of the above type of inheritances. 
+For example: Combining Hierarchical inheritance and Multiple inheritance.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+class A
+{ ... };
+class B: public virtual A
+{ ... };
+class C: public virtual A
+{ ... };
+class D: public B, public C
+{ ... };
+</pre>
+</div><br>
+
+<div class="fontbg"><b>Polymorphism</b></div><br>
+The word polymorphism means having many forms. Typically, polymorphism occurs when there is a hierarchy of classes and they are related by inheritance.
+C++ polymorphism means that a call to a member function will cause a different function to be executed depending on the type of object that invokes the function.
+<br>There are two types of polymorphism, namely:
+<pre class="pre2">
+<br><b>1)Compile-time  polymorphism</b>
+<br><b>2)Run-time polymorphism</b>
+</pre>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Java files and I/O:</b></div><br> The java.io package contains nearly every class you might ever need to perform input and output (I/O) in Java. All these streams represent an input source and an output destination. There are two kinds of streams: inputstream and outputstream.
+There are two important streams used for file manipulation.<br><b>FileInputStream:</b>This stream is used for reading data from the files. Objects can be created using the keyword new and there are several types of constructors available.
+<br><b>FileOutputStream:</b>This is used to create a file and write data into it. The stream would create a file, if it doesn't already exist, before opening it for output.
+<br><br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+InputStream f = new FileInputStream("C:/java/hello");
+OutputStream f = new FileOutputStream("C:/java/hello")
+</div><br><br>  
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code> 
+import java.io.*;
+public class fileStreamTest 
+{
+   	public static void main(String args[]) 
+	{
+     	try {
+        	byte bWrite [] = {11,21,3,40,5};
+       		OutputStream os = new FileOutputStream("test.txt");
+        	for(int x = 0; x < bWrite.length ; x++) {
+           	os.write( bWrite[x] );   // writes the bytes
+            }
+      	os.close();
+     	InputStream is = new FileInputStream("test.txt");
+        int size = is.available();
+	for(int i = 0; i < size; i++) {
+        System.out.print((char)is.read() + "  ");
+        }
+        is.close();
+      	} 
+	catch (IOException e) {
+        System.out.print("Exception");
+    	}	
+  	}
+}
+
+Output: The above code would create file test.txt and would write given numbers in binary format. Same would be the output on the stdout screen.
+/code>		 
+</PRE>
+</div>
+
+<big><u>Methods for I/O:</big></u> <br>
+<br><b>1. public void close() throws IOException{}</b>-This method closes the file output stream. Releases any system resources associated with the file. Throws an IOException.<br>
+<br><b>2. protected void finalize()throws IOException {}</b>-This method cleans up the connection to the file. Ensures that the close method of this file output stream is called when there are no more references to this stream. Throws an IOException.<br>
+<br><b>3. public int read(int r)throws IOException{}</b>-This method reads the specified byte of data from the InputStream. Returns an int. Returns the next byte of data and -1 will be returned if it's the end of the file.<br>
+<br><b>4. public void write(int w)throws IOException{}</b>-This methods writes the specified byte to the output stream.<br>

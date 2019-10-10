@@ -1,0 +1,329 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Structure</b></div>A structure is a user defined data type in C/C++. A structure creates a data type that can be used to group items of possibly different types into a single type.<br>
+'struct' keyword is used to create a structure.<br>
+<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<PRE class="pre2">
+struct structure_name
+{
+   Statements (called as 'structure members');
+};
+struct  structure_name  structure_var;
+              OR
+struct structure_name
+{
+   Structure members;
+}structure_var;
+</pre>
+</div><br>
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+struct Student     //Structure Template
+{
+   int Rollno;           //2 bytes
+   char Name[10];  //2*10=20 bytes
+};
+int main()
+{
+   struct Student S1, S2, S3;  //2+20=22 bytes
+   return 0;
+}
+Here, S1, S2, S3 are structure variables of type Student. (2+20=22) 22 bytes of memory is allocated to structure variables S1, S2, S3.
+</code>
+</PRE>
+</div>
+
+<font color="red">IMP Note:<br>
+1.We CANNOT declare a function within a structure.<br>
+2.We CANNOT perform logical operations (addition, subtraction, etc.) on structure variables.<br>
+eg- S1+S2=S3 is invalid and will show an error.<br>
+3.Memory is allocated only when structure variables are declared, the previously defined structure template is not allocated any memory.<br>
+</font>
+<br>
+<div class="fontbg"><b>Initialization of structure members</div></b>
+Structure members cannot be initialized with declaration. For example the following C program fails in compilation.<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+struct Point
+{
+   int x=0;
+   int y=0;
+};
+Output: Compilation Error.
+There are 2 ways to initialize structure members:
+struct Student
+{
+   int Rollno;
+   char Name[20];
+   char Branch[20];
+};
+void main()
+{
+   struct Student S1, S2;
+   //Way 1
+   S1.Rollno=25;
+   strcpy(S1.Name,"PLR");
+   strcpy(S1.Branch,"Computer");
+   
+   //Way 2
+   S2={"36","Dog","IT"};
+}
+In Way1, 25 is Roll no, PLR is Name, Computer is Branch.
+In Way2, 36 is Roll no, Dog is Name, IT is Branch.
+</code>
+</PRE>
+</div>
+<br>
+<div class="fontbg"><b>Accessing structure elements</b></div>
+Structure members are accessed using dot (.) operator.<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+struct Point
+
+{ 
+  
+   int x, y; 
+
+}; 
+
+int main() 
+
+{ 
+   
+   struct Point p1 = {0, 1}; 
+   
+   // Accesing members of point p1 
+   
+   p1.x = 20; 
+  
+   printf ("x = %d, y = %d", p1.x, p1.y); 
+   
+   return 0; 
+
+}
+
+Output:  x = 20, y = 1
+</code>
+</PRE>
+</div>
+<br>
+
+<div class="fontbg"><b>Array of structures</b></div>
+Like other primitive data types, we can create an array of structures.<br>
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+struct Point
+{ 
+   
+   int x,y; 
+
+}; 
+
+int main() 
+
+{ 
+   
+   // Create an array of structures 
+   
+   struct Point arr[10]; 
+   
+   // Access array members 
+   
+   arr[0].x = 10; 
+   
+   arr[0].y = 20; 
+   
+   printf("%d %d", arr[0].x, arr[0].y); 
+   
+   return 0; 
+
+} 
+
+Output:  10 20
+</code>
+</PRE>
+</div>
+ 
+
+<br>
+<div class="fontbg"><b>Structure pointer</b></div>
+Like primitive types, we can have pointer to a structure. If we have a pointer to structure, members are accessed using arrow ( -> ) operator.<br>
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+struct Point 
+{ 
+   
+   int x, y; 
+
+}; 
+
+int main() 
+
+{ 
+   
+   struct Point p1 = {1, 2}; 
+   
+   // p2 is a pointer to structure p1 
+  
+   struct Point *p2 = &p1; 
+   
+   // Accessing structure members using structure pointer 
+   
+   printf("%d %d", p2->x, p2->y); 
+   
+   return 0;
+
+}
+
+
+Output:  
+1 2
+</code>
+</PRE>
+</div>
+<br>
+<hr>
+<br>
+<big><b>Union</big></b> - Union is a user defined data type. Union is very similar to structure except in union, all members share the same memory location.<br>
+<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre>
+union union_name
+{
+   union members;
+};
+union  union_name  union_var;
+              OR
+union union_name
+{
+   union members;
+}union_var;
+</pre>
+</div><br><br>
+<div class="fontbg"><b>How is the size of union decided by compiler?</div>
+</b>
+Size of a union is taken according the size of largest member in union.
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+//Assuming integer=4 bytes and char=1byte
+union test1 
+{    
+   int x; 	 //4 bytes  
+   int y;   //4 bytes
+};   
+
+//max(4,4)=4
+union test2 
+{ 
+
+   
+   int x;     //4 bytes
+   char y;    //1 byte
+};   
+
+//max(4,1)=4 
+
+union test3 
+{ 
+
+   int arr[10];    //4*10=40 bytes 
+   char y;         //1 byte
+
+};   
+
+//max(40,1)=40
+
+int main() 
+
+{     
+   printf ("sizeof(test1) = %d", sizeof(test1));
+   printf ("sizeof(test2) = %d", sizeof(test2));
+   printf ("sizeof(test3) = %d", sizeof(test3));
+   return 0; 
+} 
+
+Output: 
+              sizeof(test1) = 4
+              sizeof(test2) = 4
+              sizeof(test3) = 40
+
+ </code>
+</PRE>
+</div>
+<br>
+<div class="fontbg"><b>Pointer to union</b></div>
+Like structures, we can have pointers to unions and can access members using the arrow operator (->). <br>
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+union team 
+{ 
+   char *name; 
+   int members; 
+   char captain[20]; 
+}; 
+int main() 
+{ 
+   union team t1,*sptr = &t1; 
+   t1.name = "India"; 
+   printf("\nTeam = %s",(*sptr).name); 
+   printf("\nTeam = %s",sptr->name); 
+   return 0; 
+} 
+Output :
+ Team = India
+ Team = India
+Here, sptr is pointer to union address. 
+-> and (*).  both represents the same.
+ </code>
+</PRE>
+</div>
+
+
+
+
+</body>
+</html>

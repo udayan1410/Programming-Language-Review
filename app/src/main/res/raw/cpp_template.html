@@ -1,0 +1,141 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+
+<div class="fontbg"><b>Templates</b></div><br>
+
+Templates are powerful features of C++ which allows you to write generic programs. In simple terms, you can create a single function or a class to work with different data types using templates.
+Templates are often used in larger codebase for the purpose of code reusability and flexibility of the programs.
+
+<br>There are two types of templates:<br>
+<br><b><big>1)Function template</b></big>
+A function template works in a similar way to a normal function, with one key difference.A single function template can work with different data types at once
+but, a single normal function can only work with one set of data types.
+Normally, if you need to perform identical operations on two or more types of data, you use function overloading to create two functions with the required function declaration.
+However, a better approach would be to use function templates because you can perform the same task writing less and maintainable code.
+<br>
+A function template starts with the keyword template followed by template parameter/s inside &#60; > which is followed by function declaration.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">Template &#60;class T>
+<pre>returnType someFunction(T arg)
+{
+   ... .. ...
+}
+</pre>
+</div><br>
+In the above code, T is a template argument that accepts different data types (int, float), and class is a keyword.
+When, an argument of a data type is passed to someFunction( ), compiler generates a new version of someFunction() for the given data type.
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+Program to swap data using function templates.
+#include &#60;iostream>
+using namespace std;
+
+template &#60;typename T>
+void Swap(T &n1, T &n2)
+{
+	T temp;
+	temp = n1;
+	n1 = n2;
+	n2 = temp;
+}
+int main()
+{
+	int i1 = 1, i2 = 2;
+	float f1 = 1.1, f2 = 2.2;
+	char c1 = 'a', c2 = 'b';
+
+	cout &#60;&#60; "Before passing data to function template.\n";
+	cout &#60;&#60; "i1 = " &#60;&#60; i1 &#60;&#60; "\ni2 = " &#60;&#60; i2;
+	cout &#60;&#60; "\nf1 = " &#60;&#60; f1 &#60;&#60; "\nf2 = " &#60;&#60; f2;
+	cout &#60;&#60; "\nc1 = " &#60;&#60; c1 &#60;&#60; "\nc2 = " &#60;&#60; c2;
+
+	Swap(i1, i2);
+	Swap(f1, f2);
+	Swap(c1, c2);
+
+    cout &#60;&#60; "\n\nAfter passing data to function template.\n";
+	cout &#60;&#60; "i1 = " &#60;&#60; i1 &#60;&#60; "\ni2 = " &#60;&#60; i2;
+	cout &#60;&#60; "\nf1 = " &#60;&#60; f1 &#60;&#60; "\nf2 = " &#60;&#60; f2;
+	cout &#60;&#60; "\nc1 = " &#60;&#60; c1 &#60;&#60; "\nc2 = " &#60;&#60; c2;
+
+	return 0;
+}
+Output:
+Before passing data to function template.
+i1 = 1
+i2 = 2
+f1 = 1.1
+f2 = 2.2
+c1 = a
+c2 = b
+
+After passing data to function template.
+i1 = 2
+i2 = 1
+f1 = 2.2
+f2 = 1.1
+c1 = b
+c2 = a
+The Swap() function template takes two arguments and swaps them by reference.
+</code>		 
+</PRE>
+</div>
+
+<br><b><big>2)Class template -</big></b>
+You can create class templates for generic class operations.
+Sometimes, you need a class implementation that is same for all classes, only the data types used are different.
+Normally, you would need to create a different class for each data type OR create different member variables and functions within a single class.
+This will unnecessarily bloat your code base and will be hard to maintain.
+<br>
+To create a class template object, you need to define the data type inside a &#60;> when creation.
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+className &#60;dataType> classObject;
+</code>		 
+</PRE>
+</div>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre>
+Template &#60;class T>
+class className
+{
+   ... .. ...
+public:
+   T var;
+   T someOperation(T arg);
+   ... .. ...
+};
+</pre>
+</div>
+In the above declaration, T is the template argument which is a placeholder for the data type used.
+Inside the class body, a member variable var and a member function someOperation() are both of type T.
+</body>
+</html>

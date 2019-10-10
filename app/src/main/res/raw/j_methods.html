@@ -1,0 +1,82 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>Java Methods:</b></div><br> 
+A Java method is a collection of statements that are grouped together to perform an operation.There are two ways in which a method is called i.e., method returns a value or returning nothing (no return value).
+
+<br><br>
+
+<div class="fontbg"><u>Syntax:</u></div> <div id="border"> 
+<pre class="pre2">
+ Creating a java method
+ public static int methodName(int a, int b) 
+ {
+   	// body
+ }
+ </pre>
+ </div><br><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code> 
+ public class ExampleMinNumber 
+ {   
+  	public static void main(String[] args) {
+     int a = 11;
+     int b = 6;
+     int c = minFunction(a, b);
+     System.out.println("Minimum Value = " + c);
+   }
+
+  /** returns the minimum of two numbers */
+   	public static int minFunction(int n1, int n2) {
+    int min;
+    if (n1 > n2)
+    min = n2;
+    else
+    min = n1;
+	return min; 
+   	}
+}
+Output: Minimum Value = 6
+</code>		 
+</PRE>
+</div>
+
+<b>The finalize() Method: </b>
+It is possible to define a method that will be called just before an object's final destruction by the garbage collector. This method is called finalize( ), and it can be used to ensure that an object terminates cleanly.
+
+<br><br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border"> 
+
+	{
+   		// finalization code here
+	}
+	</div><br><br> 
+<div style="color:red;">
+Important Points:<br>
+	1. Every Java method has to be within a class.<br>
+    2. Static methods belong to a class while non-static methods belong to objects.<br>
+	3. All parameters to functions are passed by value, primitives content is copied, while objects are not copied and some would say 'passed by reference'.

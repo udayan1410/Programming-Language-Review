@@ -1,0 +1,77 @@
+<html>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<body>
+
+<b><div class="fontbg">Array</b></div> - Array is a data structure that can store a fixed-size sequential collection of variables of the same type.<br>
+<ul>
+<li>Instead of declaring individual variables, such as number0, number1, ..., and number99, you declare one array variable such as number and use number[0], number[1], and ..., number[99] to represent individual variables</li>
+<li>A specific element in an array is accessed by an index.</li>
+<li>All arrays consist of contiguous memory locations.</li>
+<li>The lowest address corresponds to the first element and the highest address to the last element.</li></ul>
+
+<font color="red">IMP Note: Array size CANNOT be zero.</font><br>
+<br>
+<b>Array Declaration-</b><br>
+To declare an array in C, a programmer specifies the type of the elements and the number of elements required by an array as follows −<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">datatype arrayName[arraySize];<br>This is called a single-dimensional array</div><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE>
+<code>
+int number[10];
+number[4]=50;
+Here number is a variable array which can
+hold upto 10 integer elements.<br>
+Here 4th element of the array will
+ be assigned the value 50.
+</code>		 
+</PRE>
+</div>
+
+<br>
+<b>Array Initialization -</b><br>
+There are two ways to initialize arrays, namely<br><br>
+<div class="bgcolor">
+<u>Way 1</u>:<br> int number[5] = {1000, 2, 3, 7, 50};<br> 
+The number of values between braces { } cannot be larger than the number of elements that we declare for the array between square brackets [ ].<br>
+<br>
+<u>Way 2</u>:<br>int number[] = {1000, 2, 3, 7, 50};<br>
+You can omit the size of the array and an array just big enough to hold the initialization is created and you will create exactly the same array as you did in the previous example without specifying its size.<br>
+</div>
+<br>
+<br>
+The following important concepts related to array should be clear to a C programmer −<br>
+
+<ul>
+<li><b>Multi-dimensional arrays -</b><br></li>
+C supports multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array.<br>
+<br>
+<li><b>Passing arrays to functions -</b><br></li>
+You can pass to the function a pointer to an array by specifying the array's name without an index.<br>
+<br>
+<li><b>Pointer to an array -</b><br></li>
+You can generate a pointer to the first element of an array by simply specifying the array name, without any index.<br>
+</ul>
+</body>
+</html>

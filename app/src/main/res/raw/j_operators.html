@@ -1,0 +1,111 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Java basic operators:</b></div><br>Java provides a rich set of operators to manipulate variables.
+
+<u class="fontbg">1.Arithmetic Operators:</u>
+	<br>1. Addition(+): Adds values on either side of the operator.
+	<br>2. Subtraction(-): Subtracts right-hand operand from left-hand operand.
+	<br>3. Multiplication(*): Multiplies values on either side of the operator.
+	<br>4. Division(/): Divides left-hand operand by right-hand operand.
+	<br>5. Modulus(%): Divides left-hand operand by right-hand operand and returns remainder.
+	<br>6. Increment(++): Increases the value of operand by 1.
+	<br>7. Decrement(--): Decreases the value of operand by 1.
+<br><br>
+<u class="fontbg">2.Relational Operators:</u>
+	<br>1. Equal to(==): Checks if the values of two operands are equal or not, if yes then condition becomes true.
+	<br>2. Not equal to(!=): Checks if the values of two operands are equal or not, if values are not equal then condition becomes true.
+	<br>3. Greater than(>): Checks if the value of left operand is greater than the value of right operand, if yes then condition becomes true.
+	<br>4. Less than(&#60;): Checks if the value of left operand is less than the value of right operand, if yes then condition becomes true.
+	<br>5. Greater than equal to(>=): Checks if the value of left operand is greater than or equal to the value of right operand, if yes then condition becomes true.
+	<br>6. Less than equal to(&#60;=): Checks if the value of left operand is less than or equal to the value of right operand, if yes then condition becomes true.
+<br><br>
+
+<u class="fontbg">3.Bitwise Operators:</u>
+	<br>1. Bitwise and(&#38;): Binary AND Operator copies a bit to the result if it exists in both operands.
+	<br>2. Bitwise or(|): Binary OR Operator copies a bit if it exists in either operand.
+	<br>3. Bitwise XOR(^): Binary XOR Operator copies the bit if it is set in one operand but not both.
+	<br>4. Bitwise compliment(~): Binary Ones Complement Operator is unary and has the effect of 'flipping' bits.
+	<br>5. Left shift(&#60;&#60;): Binary Left Shift Operator. The left operands value is moved left by the number of bits specified by the right operand.
+	<br>6. Right shift(>>): Binary Right Shift Operator. The left operands value is moved right by the number of bits specified by the right operand.
+	<br>7. Zero fill right shift(>>>): Shift right zero fill operator. The left operands value is moved right by the number of bits specified by the right operand and shifted values are filled up with zeros.
+<br><br>
+<u class="fontbg">4.Logical Operators:</u>
+	<br>1. Logical and(&&): Called Logical AND operator. If both the operands are non-zero, then the condition becomes true.
+	<br>2. Logical or(||): Called Logical OR Operator. If any of the two operands are non-zero, then the condition becomes true.
+	<br>3. Logical not(!): Called Logical NOT Operator. Use to reverses the logical state of its operand. If a condition is true then Logical NOT operator will make false.
+
+		<br><br>
+<u class="fontbg">5.Assignment Operators:</u>
+	<br>1. Simple assignment operator(=): Assigns values from right side operands to left side operand.	
+	<br>2. Add AND assignment operator(+=): It adds right operand to the left operand and assign the result to left operand.	
+	<br>3. Subtract AND assignment operator(-=): It subtracts right operand from the left operand and assign the result to left operand.	
+	<br>4. Multiply AND assignment operator(*=): It multiplies right operand with the left operand and assign the result to left operand.	
+	<br>5. Divide AND assignment operator(/=): It divides left operand with the right operand and assign the result to left operand.	
+	<br>6. Modulus AND assignment operator(%=): It takes modulus using two operands and assign the result to left operand.	
+	<br>7. Left shift AND assignment operator(<<=): C <<= 2 is same as C = C << 2
+	<br>8. Right shift AND assignment operator(>>=): C >>= 2 is same as C = C >> 2
+	<br>9. Bitwise AND assignment operator(&=):	C &= 2 is same as C = C & 2
+	<br>10. Bitwise exclusive OR and assignment operator(^=): C ^= 2 is same as C = C ^ 2
+	<br>11. Bitwise inclusive OR and assignment operator(|=): C |= 2 is same as C = C | 2
+
+	<br><br>
+
+<u class="fontbg">6.Miscellaneous Operators:</u>
+	<br>Conditional Operator(?:): Conditional operator is also known as the ternary operator. This operator consists of three operands and is used to evaluate Boolean expressions. The goal of the operator is to decide, which value should be assigned to the variable.
+	
+	<div class="fontbg"><u>Syntax:</u></div>
+		<div id="border">variable x = (expression) ? value if true : value if false</div><br>
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+public class Test {
+
+   public static void main(String args[]) {
+      int a, b;
+      a = 10;
+      b = (a == 1) ? 20: 30;
+      System.out.println( "Value of b is : " +  b );
+
+      b = (a == 10) ? 20: 30;
+      System.out.println( "Value of b is : " + b );
+   }
+}
+
+Output: 
+Value of b is : 30
+Value of b is : 20
+</code>		 
+</PRE>
+</div>
+
+<div style="color:red;">Important Points:
+	<br>1. Operator precedence determines the grouping of terms in an expression. This affects how an expression is evaluated. Certain operators have higher precedence than others.</div>
+
+</body>
+</html>

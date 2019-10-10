@@ -1,0 +1,81 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Linked List</b></div>-Linked List is a linear data structure.<br>
+Unlike arrays, linked list elements are NOT stored at contiguous location, the elements are linked using pointers. Since we use Dynamic Memory Allocation linked list is dynamic in nature.<br>
+<br>
+A linked list is represented by a pointer to the first node of the linked list. The first node is called head. If the linked list is empty, then value of head is NULL.<br>
+<b>Each node in a list consists of at least two parts:</b><br>
+1) data<br>
+2) Pointer (Or Reference) to the next node.<br>
+In C, we can represent a node using structure.<br>
+<br>
+<u class="fontbg">Types of linked list are:</u><br>
+<br>
+<b>1)Single Linked List(SLL)-</b>
+It is the most common. Each node has data and a pointer to the next node.
+Node is represented as:
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+struct node {
+    int data;
+    struct node *next;
+};
+</code>
+</PRE>
+</div>
+<br>
+<br>
+<b>2)Doubly Linked List(DLL)-</b>
+We add a pointer to the previous node in a doubly linked list. Thus, we can go in either direction: forward or backward.
+A node is represented as
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+struct node {
+    int data;
+    struct node *next;
+    struct node *prev;
+}
+</code>
+</PRE>
+</div>
+<br>
+<br>
+<b>3)Circular Linked List(CLL)-</b>
+A circular linked list is a variation of linked list in which the last element is linked to the first element. This forms a circular loop.<br>
+A circular linked list can be either singly linked or doubly linked.<br>
+<ul>
+<li>For singly linked circular list, next pointer of last item points to the first item</li>
+<li>In doubly linked circular list, prev pointer of first item points to last item as well.</li>
+</ul>
+<br>
+
+
+</body>
+</html>

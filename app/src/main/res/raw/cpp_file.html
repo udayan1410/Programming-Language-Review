@@ -1,0 +1,163 @@
+<html>
+<body>
+
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 15px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<big><b>File -</b></big>
+A file is a collection of bytes stored on a secondary storage device, which is generally a disk of some kind.
+<br>A file can be of 2 types, namely
+<br>1. Text file
+<br>2. Binary file
+<br>
+<font color="red">IMP Note: <br>
+1.Every file has a BOF (Beginning of the file) and EOF (End of the file) tags.<br>
+2.Header file #include&lsaquo;fstream&rsaquo; must be added in the program to perform all file operations in C++.<br>
+</font>
+<br>
+<b><big>Opening a file -</big></b>
+Before a file can be used for reading or writing, it must be opened. This is can be done by using ifstream class for opening file in read mode or 
+by using ofstream class for opening file in write mode or using fstream class which can used to open file in read as well as in write mode.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre>stream_obj.open("file_name",mode);
+</pre>
+ </div><br>
+<u>Using ifstream class:</u><br>
+ ifstream f1;<br>
+ f1.open("PLR.txt");<br><br>
+ 
+<u>Using ofstream class:</u><br>
+ ofstream f1;<br>
+ f1.open("PLR.txt");<br>
+ <br>
+<u>Using fstream class:</u><br>
+ fstream f1;<br>
+ f1.open("PLR.txt",ios::out | ios::binary);<br>
+ <br>
+Some file opening modes are:
+<ul>
+<li>ios::in - Open file for read only</li>
+<li>ios::out - Open file for write only</li>
+<li>ios::app - Append to end of file</li>
+<li>ios::ate - Move to end of file</li>
+<li>ios::binary - Open in binary mode</li>
+<li>ios::trunc - Delete contents of existing file</li>
+<li>ios::nocreate - Open fails if file does not exist</li>
+<li>ios::noreplace - Open fails if file already exists</li>
+</ul>
+All these modes can be combined using bitwise OR(|).
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+#include&lsaquo;iostream&rsaquo;
+using namespace std;
+#include&lsaquo;fstream&rsaquo;
+int main()
+{
+   fstream f1;
+   f1.open("PLR.txt",ios::in | ios::binary);
+   f1.close();
+   return 0;
+}
+Here, PLR.txt is opened in read mode and binary mode. f1 is an object of class fstream.
+</code>
+</PRE>
+</div>	
+<br>
+<br>
+<b><big>Closing a file -</big></b>
+A call to .close() closes a previously opened file.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+file_obj.close();
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+f1.close();
+*refer previous example.
+</code>
+</PRE>
+</div>	
+<br>
+<br>
+<b><big>File manipulation functions:</big></b>
+<br>
+<b>1)seekg()</b> - Moves get pointer to specified location.
+For example,<br> 
+  ifstream f1;<br>
+  f1.seekg(20);<br>
+Here we are giving the absolute position in file.<br>
+However we can move get pointer to a position relative to position specified in seekg().<br>
+These positions are specified as follows:<ul>
+<li>ios::beg - Start of file</li>
+<li>ios::cur - Current position of pointer</li>
+<li>ios::end - End of file</li>
+</ul>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+i]   f1.seekg(30,ios::beg); //go to byte no.30 from beginning of file
+ii]  f1.seekg(-4,ios::cur);  //back up 4 bytes from current position
+iii] f1.seekg(0,ios::end);   //go to end of file
+</code>		 
+</PRE>
+</div>
+<br>
+<b>2)seekp()</b> - Moves put pointer to specified location.
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+ofstream f1,f2;
+f1.seekp(20);     //moves put pointer to byte no.20
+f2.seekp(30,ios::beg); //moves put pointer to byte no.30 from BOF
+</code>		 
+</PRE>
+</div>
+<br>
+<b>3)tellp()</b> - Returns current position of the put pointer.
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+R=f1.tellp();  //returns and stores current position of put pointer
+</code>		 
+</PRE>
+</div>
+<br>
+<b>4)tellg()</b> - Returns current position of the get pointer.
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+R=f1.tellg();  //returns and stores current position of get pointer
+
+</code>		 
+</PRE>
+</div>
+</body>
+</html>

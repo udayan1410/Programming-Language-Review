@@ -1,0 +1,120 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>Functions-</b></div>
+<ul>
+<li>A function is a group of statements that together perform a task. </li>
+<li>Every C program has at least one function, which is main(), and all the most trivial programs can define additional functions.</li>
+<li>It is possible to divide up code into seperate functions and that code can be reused again and again.</li>
+<li>A function can be also referred to as subroutine , procedure and method in other programming languages.</li>
+</ul>
+
+<u class="fontbg"><b>There are 3 important things in any function-</b></u>
+<ul>
+<li>Function declaration</li>
+- It tells the compiler about a function's name, return type and parameters.
+<div class="fontbg"><u>Syntax- </u></div> <div id="border">
+<PRE>
+return_type function_name(parameter)
+{
+   body of the function
+}</PRE></div>
+<br>
+<li>Function Definition</li>
+- A function definition provides the actual body of the function.
+<div class="fontbg"><u>Syntax-</u></div> <div id="border">
+<PRE>
+void sum( int a ,int b ) {
+   b = b+a;
+   print(b)
+}</PRE></div>
+<br>
+
+<li>Function Call</li>
+- Whenever a function is required the function can be accessed by calling the function and passing in the required parameters.
+<div class="fontbg"><u>Syntax-</u></div> <div id="border">
+function_name(parameters_list);
+</div>
+<br>
+</ul>
+
+
+<u class="fontbg"><b>Function Arguments-</b></u><br>
+<ul><li>Function argument is the data which we can pass to a function and perform calculation.The number of arguments can differ from function to function depending on the application.</li>
+<div class="fontbg"><u>Syntax-</u></div> <div id="border">
+<PRE>
+void function_name(par1,par2){
+	return par1+par2;
+}
+</PRE>
+</div>
+</ul>
+<br>
+<u class="fontbg"><b>Function Return types-</b></u><br>
+<ul><li>We can choose to return the data after computation from the function or we can display the result in the function itself.</li>
+<div class="fontbg"><u>Syntax-</u></div> <div id="border">
+<PRE>
+return-type function_name(){
+function body
+return return-type;
+}
+</PRE>
+</div>
+</ul>
+ <div class="bgcolor">
+<PRE>
+Example of function- 
+
+/* function declaration */
+int add(int num1, int num2);
+ 
+int main () {
+
+   /* local variable definition */
+   int val1 = 10;
+   int val2 = 20;
+   int ret;
+ 
+   /* calling a function to get addition */
+   ret = add(a, b);
+ 
+   printf( "Addition is : %d\n", ret );
+ 
+   return 0;
+}
+ 
+
+int add(int num1, int num2) {
+
+   /* local variable declaration */
+   int result;
+	result = num1+num2;
+   return result; 
+}
+
+Output-
+Addition is 30.
+</PRE>
+</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+<body>
+
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>STL (Standard Template Library) -</b></div><br>
+The C++ STL is a set of general purpose template classes and functions.It provides us many widely used predefined algorithms and data structures like vectors, lists, stacks and queues.
+<br><br>
+The three main components of STL are:<br>
+<b>1)Containers -</b>
+Containers are objects that actually stores data. It manages the storage space for its elements and provides member functions to access them, either directly or through iterators.
+<br>Containers can be broadly classified into 3 types:<ul>
+<li>Sequence containers</li>
+<li>Associative containers</li>
+<li>Derived containers</li>
+</ul>
+<b>2)Algorithms -</b>
+STL algorithms are standard template functions, which support various operations. We can use these algorithms if we include &#60;algorithm> in our program.
+<br>They are of following types:<ul>
+<li>Sorting algorithms</li>
+<li>Set algorithms</li>
+<li>Relational algorithms</li>
+<li>Numeric algorithms</li>
+<li>Mutating algorithms</li>
+<li>Non-mutating algorithms</li>
+</ul>
+<b>3)Iterators -</b>
+Iterators are used to access container elements . 
+<br>They are of following types :
+<ul>
+<li>Input</li>
+<li>Output</li>
+<li>Forward</li>
+<li>Bidirectional</li>
+<li>Random</li>
+
+<br>
+</ul>
+<div class="fontbg"><u>Example:</u></div>
+Let us take the following program that demonstrates the vector container (a C++ Standard Template) which is similar to an array with an exception that it automatically handles its own storage requirements in case it grows −
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+#include &lsaquo;iostream&rsaquo;
+#include &lsaquo;vector&rsaquo;
+using namespace std;
+ 
+int main() {
+
+   // create a vector to store int
+   vector&lsaquo;int&rsaquo; vec; 
+   int i;
+
+   // display the original size of vec
+   cout &lsaquo;&lsaquo; "vector size = " &lsaquo;&lsaquo; vec.size() &lsaquo;&lsaquo; endl;
+
+   // push 5 values into the vector
+   for(i = 0; i &lsaquo; 5; i++) {
+      vec.push_back(i);
+   }
+
+   // display extended size of vec
+   cout &lsaquo;&lsaquo; "extended vector size = " &lsaquo;&lsaquo; vec.size() &lsaquo;&lsaquo; endl;
+
+   // access 5 values from the vector
+   for(i = 0; i &lsaquo; 5; i++) {
+      cout &lsaquo;&lsaquo; "value of vec [" &lsaquo;&lsaquo; i &lsaquo;&lsaquo; "] = " &lsaquo;&lsaquo; vec[i] &lsaquo;&lsaquo; endl;
+   }
+
+   // use iterator to access the values
+   vector&lsaquo;int&rsaquo;::iterator v = vec.begin();
+   while( v != vec.end()) {
+      cout &lsaquo;&lsaquo; "value of v = " &lsaquo;&lsaquo; *v &lsaquo;&lsaquo; endl;
+      v++;
+   }
+   return 0;
+}
+Output:
+vector size = 0
+extended vector size = 5
+value of vec [0] = 0
+value of vec [1] = 1
+value of vec [2] = 2
+value of vec [3] = 3
+value of vec [4] = 4
+value of v = 0
+value of v = 1
+value of v = 2
+value of v = 3
+value of v = 4
+</code>		 
+</PRE>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+
+.imgprop{
+	max-width: 100%;
+    max-height: 100%;
+}
+
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>Database connectivity:</b></div><br>  Java Database Connectivity is a Java API to connect and execute the query with the database. It is a part of JavaSE (Java Standard Edition).We can use JDBC API to access tabular data stored in any relational database.<br>
+To establish a JDBC connection these are the four steps:<br>
+1. Import JDBC Packages: Add import statements to your Java program to import required classes in your Java code.<br>
+2. Register JDBC Driver: This step causes the JVM to load the desired driver implementation into memory so it can fulfill your JDBC requests.<br>
+3. Database URL Formulation: This is to create a properly formatted address that points to the database to which you wish to connect.<br>
+4. Create Connection Object: Finally, code a call to the DriverManager object's getConnection( ) method to establish actual database connection.<br>
+
+<img src="./jdbcimage.jpeg" class="imgprop"> <br><br><br>
+
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+Loading the driver: DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver())
+To create connection:  Connection con = DriverManager.getConnection(url,user,password) </pre> </div>
+
+<div style="color:red;">Important points:<br>
+1. JDBC is an standard API specification developed in order to move data from frontend to backend.<br>
+2. This API consists of classes and interfaces written in Java.<br>

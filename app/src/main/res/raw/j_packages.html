@@ -1,0 +1,58 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>Java Packages: <br> </b><br></div>A java package is a group of similar types of classes, interfaces and sub-packages.The concept of package can be considered as means to achieve data encapsulation. <br>
+
+Packages are categorized as :<br>
+1. Built-in packages: standard packages which come as a part of Java Runtime Environment.<br>
+2. User-defined packages: packages defined by programmers to bundle group of related classes.<br>
+
+1. Built-in packages:<br>
+	1. java.lang: Contains language support classes. This package is automatically imported.<br>
+	2. java.io: Contains classes for supporting input / output operations.<br>
+	3. java.util: Contains utility classes which implement data structures like Linked List, Hash Table, Dictionary, etc and support for Date / Time operations.<br>
+	4. java.applet:	Contains classes for creating Applets.<br>
+	5. java.awt: Contains classes for implementing the components of graphical user interface (like buttons, menus, etc)<br>
+	6. java.net: Contains classes for supporting networking operations.<br>
+2. User defined packages:<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+package mypack;  
+public class Simple{  
+ public static void main(String args[]){  
+    System.out.println("Welcome to package");  
+   }  
+}  
+To compile: javac -d directory javafilename 
+</pre>
+</div>
+
+Important points:<br><br>
+1. Java package is used to categorize the classes and interfaces so that they can be easily maintained.<br>
+2. Java package provides access protection.<br>
+3. Java package removes naming collision.<br>
+4. There are three ways to access the package from outside the package:<br>
+	1. import package.*;<br>
+	2. import package.classname;<br>
+	3. fully qualified name.<br>

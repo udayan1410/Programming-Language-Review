@@ -1,0 +1,214 @@
+<html>
+<body>
+
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>File</b></div>A file is a collection of bytes stored on a secondary storage device, which is generally a disk of some kind.<br>
+A file can be of 2 types, namely<br>
+1. Text file<br>
+2. Binary file<br>
+<br>
+<font color="red">IMP Note: Every file has a BOF (Beginning of the file) and EOF (End of the file) tags.</font><br>
+<br>
+<b><big>Opening a file</big></b> -<br>
+Before a file can be used for reading or writing, it must be opened. This is done by a call to the fopen() function.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+fopen("file_name","mode");
+</div>
+<br>
+Some file opening modes are:
+<ul>
+<li>"r" (read) - open existing file for reading.</li>
+<li>"w" (write) - open (create if necessary) file for writing, discard previous contents.</li>
+<li>"a" (append) - open (create if need be), do not discard previous contents, write at the end of the file.</li>
+<li>"rb" - open an existing binary file for reading.</li>
+</ul>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int main()
+{
+   FILE *fp;
+   fp=fopen("PLR.txt","w");
+   fclose(fp);
+   return 0;
+}
+</code>		 
+</PRE>
+</div>
+
+Here, PLR.txt is opened in write mode. fp is a pointer variable of type FILE. "FILE" is an in-built structure datatype given in header file <stdio.h>. All file manipulation operations in C require this datatype "FILE".<br>
+<br>
+<font color="red">IMP Note: If fopen() is successful in opening the file, it returns a pointer of type FILE. If fopen() cannot successfully open the file, it returns a NULL pointer instead.</font><br>
+<br>
+<b><big>Closing a file</big></b> -<br>
+A call to fclose() closes a previously opened file.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+fclose(address of file);
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+fclose(fp);
+*refer previous example.
+</code>
+</PRE>
+</div>
+<br>
+Other important file related functions are:<br>
+<br>
+1. <b>fprintf()</b> - Writes data to the file.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+fprintf(file-pointer,"control string",list of arguments);
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+fprintf(f1,"%s%d",name,salary);
+It writes name and salary in file.
+</code>
+</PRE>
+</div>
+<hr>
+<br>
+2. <b>fscanf()</b> - Reads a set of data values from a file.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+fscanf(file-pointer,"control string",address of arguments);
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+fscanf(f1,"%s%d",name,&salary);
+It reads name and salary from the file.
+</code>
+</PRE>
+</div>
+<hr>
+<br>
+3. <b>getc()</b> - Reads a character from a file.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+getc(file-pointer);
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+char ch;
+ch=getc(f1);
+It reads a character from the file pointed by file-pointer f1.
+</code>
+</PRE>
+</div>
+<br>
+<hr>
+<br>
+4. <b>getw()</b> - Reads an integer from a file.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+getw(file-pointer);
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int num;
+num=getw(f1);
+It reads integer from the file pointed by file-pointer f1.
+</code>
+</PRE>
+</div>	
+<hr>
+<br>
+5. <b>putw()</b> - Writes an integer to a file.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+putw(int number,file-pointer);
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int c=2;
+putw(c,f1);
+Writes '2'to the file pointed by f1 pointer.
+</code>
+</PRE>
+</div>
+<hr>
+<br>
+6. <b>ftell()</b> - It returns the current position of file pointer.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+ftell(file pointer);
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+ftell(f1);
+It returns the current position of file-pointer "f1".
+</code>
+</PRE>
+</div>
+<hr>
+<br>
+7. <b>fseek()</b> - It is used to move the position of file pointer to the desired location within a file.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+fseek(file-pointer,offset,position);
+</div>
+<ul>
+<u>Position modes:</u>
+<li>0/SEEK_SET - Beginning position of file(BOF)</li>
+<li>1/SEEK_CUR - The current position</li>
+<li>2/SEEK_END - End position of file (EOF)</li>	
+</ul>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+fseek(f1,0,0); - Pointer will move to the starting position of the file.
+fseek(f1,0,2); - Pointer will move to the end position of the file.
+fseek(f1,5,0); - Pointer will move by '5+1' positions forward from the start of the file.
+fseek(f1,3,1); - Pointer will move '3' positions forward from the current position.
+fseek(f1,-3,1); - Pointer will move '3' positions backwards from the current position.
+fseek(f1,-3,2); - Pointer will move '3+1' positions backwards from the end position.
+fseek(f1,3,2); - Pointer will show an error as we cannot go beyond the end position of the file.
+fseek(f1,-3,0); - Pointer will show an error as we cannot move backwards from the start position of the file.
+</code>
+</PRE>
+</div>
+<br>
+<font color="red">IMP Note: Pointer will move 'n+1' positions for position modes: 0 and 2 (i.e SEEK_SET & SEEK_END) whereas it will move 'n' positions for position mode: 1 (i.e SEEK_CUR), where n is the offset by which pointer moves. </font>
+
+
+</body>
+</html>

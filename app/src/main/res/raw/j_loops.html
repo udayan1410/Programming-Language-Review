@@ -1,0 +1,68 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Java loops:</b></div><br>Looping in programming languages is a feature which facilitates the execution of a set of instructions/functions repeatedly while some condition evaluates to true. A loop statement allows us to execute a statement or group of statements multiple times and following is the general form of a loop statement in most of the programming languages.<br>
+<br><b>Types of the loops:</b>
+	<br><b>1. While loop:</b> Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.
+	<br><b>2. For loop:</b> Execute a sequence of statements multiple times and abbreviates the code that manages the loop variable.
+	<br><b>3. do...while loop:</b> Like a while statement, except that it tests the condition at the end of the loop body.
+
+<br><br><b>Loop control statements:</b>
+	<br><b>1. Break statement:</b> Terminates the loop or switch statement and transfers execution to the statement immediately following the loop or switch.
+	<br><b>2. continue statement:</b>	 Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating.
+
+<br><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>	
+public class Test {
+
+   public static void main(String args[]) {
+      int [] numbers = {10, 20, 30, 40, 50};
+
+      for(int x : numbers ) {
+         System.out.print( x );
+         System.out.print(",");
+      }
+      System.out.print("\n");
+      String [] names = {"James", "Larry", "Tom", "Lacy"};
+
+      for( String name : names ) {
+         System.out.print( name );
+         System.out.print(",");
+      }
+   }
+}
+
+Output:
+10, 20, 30, 40, 50,
+James, Larry, Tom, Lacy.
+</code>		 
+</PRE>
+</div>
+</body>
+</html>

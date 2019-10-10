@@ -1,0 +1,90 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>Java polymorphism:</b><br></div>Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.<br>
+<br>
+There are two types of polymorphism in Java:<br>
+1. Compile-time polymorphism <br>
+2. Runtime polymorphism. <br>
+We can perform polymorphism in java by method overloading and method overriding.<br>
+1. Java Compile time polymorphism: Compile time polymorphism or static method dispatch is a process in which a call to an overloading method is resolved at compile time rather than at run time. In this process, we done overloading of methods is called through the reference variable of a class here no need to superclass.<br>
+<div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>
+class Calculation{
+  void sum(int a,int b)
+  {
+     System.out.println(a+b);
+  }
+  void sum(int a,int b,int c){
+     System.out.println(a+b+c);
+   }
+
+  public static void main(String args[]){
+  Calculation obj=new Calculation();
+  obj.sum(10,10,10);
+  obj.sum(20,20);
+
+  }
+}
+
+Output:
+30
+40
+</code>
+</pre>
+</div>
+<br>
+2. Java Runtime polymorphism: Runtime polymorphism or Dynamic Method Dispatch is a process in which a call to an overridden method is resolved at runtime rather than compile-time.<br>
+<div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>
+class Bike{  
+  void run(){System.out.println("running");}  
+}  
+class Splendor extends Bike{  
+  void run(){System.out.println("running safely with 60km");}  
+  
+  public static void main(String args[]){  
+    Bike b = new Splendor();//upcasting  
+    b.run();  
+  }  
+}
+
+Output: running safely with 60km. 
+</code>
+</pre>
+</div>
+<br>
+<div style="color:red;">Important points:<br>
+1. An object in Java that passes more than one IS-A tests is polymorphic in nature.<br>
+
+2. Every object in Java passes a minimum of two IS-A tests: one for itself and one for Object class.<br>
+
+3. Static polymorphism in Java is achieved by method overloading.<br>
+
+4. Dynamic polymorphism in Java is achieved by method overriding.<br>

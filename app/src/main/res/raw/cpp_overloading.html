@@ -1,0 +1,127 @@
+<html>
+<body>
+
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Function overloading -</b></div><br>
+
+Function overloading is a feature in C++ where two or more functions can have the same name but different parameters.
+Function overloading can be considered as an example of polymorphism feature in C++.
+<br><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+#include &#60;iostream>
+using namespace std; 
+
+void print(int i) 
+{ 
+  cout &#60;&#60; " Here is int " &#60;&#60; i &#60; endl; 
+} 
+void print(double  f)
+{ 
+  cout &#60;&#60; " Here is float " &#60;&#60; f &#60;&#60; endl; 
+} 
+void print(char const *c)
+{ 
+  cout &#60;&#60; " Here is char* " &#60;&#60; c &#60;&#60; endl; 
+} 
+int main() 
+{ 
+  print(10); 
+  print(10.10); 
+  print("ten"); 
+  return 0; 
+}
+Output:
+Here is int 10 
+Here is float 10
+Here is char* ten
+Here, there are 3 print functions. Depending upon the type of input provided to the functions, that specific function is implemented.
+</code>		 
+</PRE>
+</div>
+<br>
+<hr>
+<div class="fontbg"><b>Operator overloading -</b></div><br>
+In C++, it's possible to change the way operator works (for user-defined types). 
+The meaning of an operator is always same for variable of basic types like: int, float, double etc. For example: To add two integers, + operator is used.
+However, for user-defined types (like: objects), you can redefine the way operator works. 
+For example:
+If there are two objects of a class that contains string as its data members. You can redefine the meaning of + operator and use it to concatenate those strings.
+This feature in C++ programming that allows programmer to redefine the meaning of an operator (when they operate on class objects) is known as operator overloading.
+<br><br>
+<div class="fontbg"><u>Syntax:</u></div>
+<div id="border">To overload an operator :<br>
+return_type operator_symbol (arguments)</div><br>
+Here, returnType is the return type of the function.
+The returnType of the function is followed by operator keyword.
+<br>Symbol is the operator symbol you want to overload. Like: +,-,*. You can pass arguments to the operator function in similar way as functions.
+
+<br><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+#include&#60;iostream> 
+using namespace std; 
+  
+class Complex 
+{ 
+private: 
+    int real, imag; 
+public: 
+    Complex(int r = 0, int i =0)  {real = r;   imag = i;} 
+      
+    // This is automatically called when '+' is used with 
+    // between two Complex objects 
+    Complex operator + (Complex const &obj) { 
+         Complex res; 
+         res.real = real + obj.real; 
+         res.imag = imag + obj.imag; 
+         return res; 
+    } 
+    void print() { cout &#60;&#60; real &#60;&#60; " + i" &#60;&#60; imag &#60;&#60; endl; } 
+}; 
+int main() 
+{ 
+    Complex c1(10, 5), c2(2, 4); 
+    Complex c3 = c1 + c2; // An example call to "operator+" 
+    c3.print(); 
+} 
+Output:
+12 + i9
+</code>		 
+</PRE>
+</div>
+Almost all operators can be overloaded except few. Following is the list of operators that cannot be overloaded.
+<br>. (dot) 
+<br>:: (Scope Resolution)
+<br>?: (Ternary Operator)
+<br>sizeof
+   
+</body>
+</html>

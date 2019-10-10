@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#C3E2DC"
+    >
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <ImageView
+            android:id="@+id/bgimg"
+            android:layout_width="wrap_content"
+            android:scaleType="centerCrop"
+            android:layout_centerHorizontal="true"
+            android:layout_height="250dp"
+
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="100"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal"
+            >
+            <android.support.v7.widget.CardView
+                android:id="@+id/cd1"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="5dp"
+                android:elevation="8dp"
+
+                app:cardElevation="10dp"
+                >
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="center"
+                    android:text="C"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="42dp"
+                    android:textColor="#6eab9f"
+                    />
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="50"
+                android:layout_below="@+id/cd1"
+                android:id="@+id/cd2"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#FFFFFF"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="5dp"
+                android:elevation="8dp"
+                app:cardElevation="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="center"
+                    android:text="C++"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="42dp"
+                    android:textColor="#6eab9f"
+                    />
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="100"
+            android:paddingTop="5dp"
+            android:paddingBottom="10dp"
+            android:orientation="horizontal"
+
+            >
+            <android.support.v7.widget.CardView
+                android:id="@+id/cd3"
+                android:layout_width="0dp"
+                android:layout_weight="50"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="5dp"
+                android:elevation="8dp"
+                app:cardElevation="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="center"
+                    android:text="Java"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="37dp"
+                    android:textColor="#6eab9f"
+                    />
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/olcompiler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="50"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:background="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="5dp"
+                android:elevation="10dp"
+                app:cardElevation="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:gravity="center"
+                    android:text="Compiler"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textSize="37dp"
+                    android:textStyle="bold"
+                    android:textColor="#6eab9f"
+                    />
+
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

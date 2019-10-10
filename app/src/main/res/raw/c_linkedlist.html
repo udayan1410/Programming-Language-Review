@@ -1,0 +1,386 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Linked List</b></div>-Linked List is a linear data structure.<br>
+Unlike arrays, linked list elements are NOT stored at contiguous location, the elements are linked using pointers. Since we use pointers, Dynamic Memory Allocation can be used. Thus, linked list is dynamic in nature.<br>
+<br>
+A linked list is represented by a pointer to the first node of the linked list. The first node is called head. If the linked list is empty, then value of head is NULL.<br>
+<b>Each node in a list consists of at least two parts:</b><br>
+1) data<br>
+2) Pointer (Or Reference) to the next node.<br>
+In C, we can represent a node using structure.<br>
+<br>
+<u class="fontbg">Types of linked list are:</u><br>
+<br>
+<b>1)Single Linked List(SLL)-</b>
+It is the most common. Each node has data and a pointer to the next node.
+Node is represented as:
+<div class="fontbg"><u></u></div>
+<div class="bgcolor">
+<PRE>
+<code>
+struct node {
+    int data;
+    struct node *next;
+};
+</code>		 
+</PRE>
+</div>
+<br>
+<br>
+<b>2)Doubly Linked List(DLL)-</b>
+We add a pointer to the previous node in a doubly linked list. Thus, we can go in either direction: forward or backward.
+A node is represented as
+<div class="fontbg"><u></u></div>
+<div class="bgcolor">
+<PRE>
+<code>
+struct node {
+    int data;
+    struct node *next;
+    struct node *prev;
+}
+
+</code>		 
+</PRE>
+</div>
+<br>
+<br>
+<b>3)Circular Linked List(CLL)-</b>
+A circular linked list is a variation of linked list in which the last element is linked to the first element. This forms a circular loop.<br>
+A circular linked list can be either singly linked or doubly linked.<br>
+<ul>
+<li>For singly linked circular list, next pointer of last item points to the first item</li>
+<li>In doubly linked circular list, prev pointer of first item points to last item as well.</li>
+</ul>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<ul>
+<li>Insert at head</li>
+<li>Insert at end</li>
+<li>Insert in-between</li>
+<li>Delete at head</li>
+<li>Delete at end</li>
+<li>Delete in-between</li>
+<li>Reverse the list</li>
+</ul>
+<br>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+//Structure definition of node
+struct node
+{
+  int val; //Information field(i.e value)
+  struct node *next; //Next field of node
+}*head; //head is a global variable
+
+//Function definition of Create()
+struct node* Create()
+{ 
+  int no,i,v;
+  struct node *ptr,*cur;
+  cur=head; 
+  int size2=sizeof(struct node);
+  
+  printf("\n\tHow many nodes?");
+  scanf("%d",&no);
+  
+  for(i=0;i&#60;no;i++)
+  {
+	if(i==0) 
+	{
+	printf("\n\tEnter element");
+	scanf("%d",&v); //Take value
+  ptr=(struct node*)malloc(size2); 
+    ptr->val=v;     
+    ptr->next=NULL; 
+    head=ptr;       
+   }
+   else    
+   {
+	printf("\n\tEnter element");
+	scanf("%d",&v); 
+	cur=(struct node*)malloc(size2); 
+    cur->val=v;    
+    cur->next=NULL; 
+    ptr->next=cur;  
+    ptr=cur;       
+   } 
+ }
+return(head); 
+}
+
+//Function definition of display()
+void display()
+{
+  struct node *cur;
+  
+  if(head==NULL) 
+  printf("\n\tList is empty");
+  else
+  {
+	printf("\n\tList is- \n");  
+	cur=head; 
+	printf("\t");
+	while(cur!=NULL) 
+	{
+	  printf("%d\t",cur->val);
+	  cur=cur->next; 
+	}
+  }
+printf("\n");
+}
+
+//Function definition of reverseList()
+struct node* reverseList()
+{
+   
+   struct node *cur, *prev=NULL, *nxt=NULL;
+   cur=head;         
+   while(cur!=NULL)
+   {
+     nxt=cur->next;  
+     cur->next=prev; 
+     prev=cur;       
+     cur=nxt;        
+   }
+   head=prev;        
+   printf("\n\tList is reversed");
+   display();
+   return(head);     
+}
+
+//Function definition of insert_head()
+struct node* insert_head(int v)
+{
+  struct node *ptr;
+  ptr=(struct node*)malloc(size2); 
+  ptr->val=v;     
+  ptr->next=NULL; 
+  
+  if(head==NULL)  
+  {
+    head=ptr;     
+    printf("\n\tInserted first node");
+  }
+  else
+  {
+    ptr->next=head; 
+    head=ptr;       
+    printf("\n\tInserted at head\n");
+  }
+return(head); 
+}
+
+//Function definition of insert_end()
+void insert_end(int v)
+{
+  struct node *ptr,*cur;
+  ptr=(struct node*)malloc(size2); 
+  ptr->val=v;      
+  ptr->next=NULL;  
+  
+  if(head==NULL)   
+  head=ptr; 
+  else
+  {
+    cur=head; 
+    while(cur->next !=NULL) 
+    {
+      cur=cur->next; 
+    } 
+    cur->next=ptr;   
+    printf("\n\tInserted at end\n");
+  }
+}
+
+//Function definition of insert_position()
+int insert_position()
+{
+    struct node *cur,*prev,*temp;
+    int loc,i=1,v;    
+    
+    cur=head;  
+    printf("\n\tEnter the location: "); 
+    scanf("%d",&loc); 
+      
+    if(loc==1)
+    {
+	  printf("\n\tEnter element: ");
+	  scanf("%d",&v); 
+	  head=insert_head(v); 
+	  return 0;
+    }
+    
+   temp=(struct node*)malloc(size2); 
+    printf("\n\tEnter value in node: "); 
+    scanf("%d",&temp->val); 
+    temp->next=NULL;        
+    
+    while(i&#60;loc && cur!=NULL) 
+    {
+      prev=cur;      
+      cur=cur->next; 
+      i++;           
+    }
+    if(cur==NULL) 
+    {
+      printf("\n\tInvalid position entered");
+      return 0;
+    }
+    temp->next=cur;  
+    prev->next=temp; 
+    printf("\n\tInserted successfully");
+return 0;
+}
+
+//Function definition of del_head()
+struct node* del_head()
+{
+  struct node *cur;
+  if(head==NULL)
+  printf("\n\tList is empty");
+  else
+  {
+	cur=head;      
+	head=cur->next;
+	cur->next=NULL; 
+	printf("\n\tDeleted %d\n",cur->val); 
+	free(cur); //Free the memory
+  }
+return(head); 
+}
+
+//Function definition of del_end()
+void del_end()
+{
+  struct node *cur,*prev;
+  cur=head;      
+  if(head==NULL) 
+  printf("\n\tList is empty");
+  else
+  {
+	while(cur->next!=NULL)
+	{
+	  prev=cur;      
+	  cur=cur->next; 
+	}
+	printf("\n\tDeleted %d\n",cur->val); 
+	prev->next=NULL; 
+	free(cur);       
+  }	
+}
+
+//Function definition of del_position()
+int del_position()
+{
+  struct node *cur,*prev;
+  int loc, i=1;       
+  printf("\n\tEnter the location to delete");
+  scanf("%d",&loc);//Taking the location 
+  cur=head;          
+  while(i<loc && cur!=NULL) 
+  {
+    prev=cur;       
+    cur=cur->next;   
+    i++;             
+  }
+  if(cur==NULL)  
+  {
+    printf("\n\tElement not found");
+    return 0;       //exit from program
+  }
+  prev->next=cur->next;  
+  free(cur);             
+  printf("\n\tDeleted successfully\n");
+  return 0;
+}
+
+int main()
+{
+  int ch,v;
+  
+  do
+  {
+	printf("\n\t1.Create"); //Menu
+	printf("\n\t2.Insert at head");
+	printf("\n\t3.Insert at end");
+	printf("\n\t4.Insert in-between");
+	printf("\n\t5.Delete at head");
+	printf("\n\t6.Delete at end");
+	printf("\n\t7.Delete in-between");
+	printf("\n\t8.Reverse the list");
+	printf("\n\t9.Display");
+	printf("\n\t10.Exit");
+	printf("\n\tEnter your choice: ");
+	scanf("%d",&ch); //Take choice
+	switch(ch)
+	{
+      case 1: Create();  
+              break;
+              
+      case 2: printf("\n\tEnter element: ");
+	          scanf("%d",&v); 
+              head=insert_head(v); 
+              break;
+                 
+      case 3: printf("\n\tEnter element: ");
+	          scanf("%d",&v);  
+              insert_end(v);   
+              break;
+           
+      case 4: insert_position(); 
+              break;
+                   
+      case 5: head=del_head();   
+              break;
+              
+      case 6: del_end();         
+              break;
+                  
+      case 7: del_position();    
+              break; 
+               
+      case 8: head=reverseList(); 
+              break;
+                                                  
+      case 9: display();         
+              break;
+                               
+      case 10: printf("\n\tThank You!!");     
+               break;
+              
+      default: printf("\n\tInvalid choice");  
+    }
+  }while(ch!=10);
+return 0;
+}
+</code>
+</PRE>
+</div>
+
+</body>
+</html>

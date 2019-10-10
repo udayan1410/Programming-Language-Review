@@ -1,0 +1,147 @@
+<html>
+<body>
+
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<b><big>Constructor</big></b> - <ul>
+<li>It is a member function of a class with same name as that of a class.</li>
+<li>It is used to initialize data members of class.</li>
+<li>It is always declared under public section.</li>
+<li>It does not have return type and hence cannot return any value, not even void.</li>
+<li>It is invoked automatically when object of class is created and initialize all data members of a class.</li>
+<li>It cannot be declared as static, const and virtual.</li>
+</ul>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre>
+class_name ()
+{ Constructor Definition }
+</pre>
+</div><br>
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+class example
+{
+   int x,y;
+   public:
+   example()
+   {
+      x=10;
+	  y=20;
+   }
+   void display()
+   {
+      cout&lsaquo;&lsaquo;x&lsaquo;&lsaquo;y;
+   }
+};
+int main()
+{
+  example O;
+  O.display();
+  return 0;
+}
+Output: 10  20
+</code>		 
+</PRE>
+</div>
+<br>
+There 3 types of constructors, namely:<br>
+1)<b>Default constructor</b> -
+A constructor with no parameter is default constructor.
+If constructor is not defined in program then compiler supplies default constructor.
+<br>
+2)<b>Parameterized constructor</b> -
+A constructor that receives parameters is parameterized constructor.
+<br>
+3)<b>Copy constructor</b> -
+Copy constructor initializes an object using values of another object passed to it as a parameter.
+<br>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+class Cube
+{
+   int side;
+   public:
+   Cube()
+   {
+     side=10;
+   }
+   Cube(int x)
+   {
+      side=x;
+   }
+};
+
+int main()
+{
+   Cube c1;
+   Cube c2(20);
+   cout &lsaquo;&lsaquo; c1.side;
+   cout &lsaquo;&lsaquo; c2.side;
+}
+Output: 10  20
+</code>		 
+</PRE>
+</div>
+<br>
+<hr>
+<br>
+<b><big>Destructor</big></b> - <ul>
+<li>Destructor is a member function which destroys or deletes an object. It is used to free the resources occupied by an object.</li>
+<li>It is called automatically when the object is no longer needed or when scope/lifetime of an object ends.</li>
+<li>It has same name as that of class preceded by tilde(~) sign.</li>
+<li>It is always declared or defined under public section.</li>
+<li>It neither returns any value nor takes any argument.</li>
+<li>It cannot be declared as static, const and virtual.</li>
+</ul>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre>
+class A
+{
+ public:
+ ~A();
+};
+</pre>
+</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+class example
+{
+   public:
+    ~example();  //destructor
+};
+</code>		 
+</PRE>
+</div>
+
+</body>
+</html>

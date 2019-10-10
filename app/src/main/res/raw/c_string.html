@@ -1,0 +1,98 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>String</b></div>-String is defined as an array of characters which is terminated with a special character called NULL (‘\0’).<br>
+<br>
+<u class="fontbg">Declaration of strings:</u><br>
+Declaring a string is as simple as declaring a one dimensional array. Below is the basic syntax for declaring a string.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+char str_name[size]; </div><br>
+
+In the above syntax, "str_name" is any name given to the string variable and "size" is the length of the string, of which '\0' will take one space, therefore the total size of the string declared should always be "n+1" where n is the no. of the characters of string and plus one for '\0' character.<br>
+<br>
+<u class="fontbg">Initializing a String:</u><br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+1. char str[] = "PLR"; 
+2. char str[50] = "PLR"; 
+3. char str[] = {'P','L','R','\0'};
+4. char str[14] = {'P','L','R','\0'};
+</pre></div><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE>
+<code>
+int main()
+{
+    char a[20];
+    printf("Enter string: ");
+    scanf("%s",a);
+    printf("Your string is: %s",a);
+    return 0;
+}
+Output: Enter string: Programming
+        Your string is: Programming
+</code>		 
+</PRE>
+</div>
+<br>
+<u class="fontbg">Passing strings to function:</u><br>
+As strings are character arrays, we can pass strings to function in the same way we pass an array to a function.<br>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE>
+<code>
+void display(char str[]) 
+{ 
+    printf("String is : %s",str); 
+} 
+int main() 
+{    
+    // declare and initialize string 
+    char str[] = "PLR"; 
+    // print string by passing string 
+    // to a different function 
+    display(str); 
+    return 0; 
+} 
+Output:
+String is : PLR
+</code>		 
+</PRE>
+</div>
+<br>
+String Manipulation functions:<br>
+1.strlen()<br>
+2.strcmp()<br>
+3.strcat()<br>
+4.strupr()<br>
+5.strlwr()<br>
+*Explained in Libraries.<br>
+
+
+</body>
+</html>

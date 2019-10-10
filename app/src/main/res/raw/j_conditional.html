@@ -1,0 +1,73 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Java decision Control:</b></div><br>Decision control statements can change the execution flow of a program. <br>
+<br>Decision control statements in Java are:<br>
+
+<b>1. if statement:</b> An if statement consists of a boolean expression followed by one or more statements.<br>
+
+<b>2 if...else statement:</b> An if statement can be followed by an optional else statement, which executes when the boolean expression is false.<br>
+
+<b>3. nested if statement:</b> You can use one if or else if statement inside another if or else if statement(s).<br>
+
+<b>4. switch statement:</b> switch statement allows a variable to be tested for equality against a list of values.<br>
+<br><br>
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+class NestedIfDemo 
+{ 
+    public static void main(String args[]) 
+    { 
+        int i = 10; 
+  
+        if (i == 10) 
+        { 
+            // First if statement 
+            if (i &#60; 15) 
+                System.out.println("i is smaller than 15"); 
+  
+            // Nested - if statement 
+            // Will only be executed if statement above 
+            // it is true 
+            if (i &#60; 12) 
+                System.out.println("i is smaller than 12 too"); 
+            else
+                System.out.println("i is greater than 15"); 
+        } 
+    } 
+} 
+
+Output:
+i is smaller than 15
+i is smaller than 12 too 
+</code>		 
+</PRE>
+</div>
+</body>
+</html>

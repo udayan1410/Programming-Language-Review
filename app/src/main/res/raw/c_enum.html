@@ -1,0 +1,158 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<big><b>Enumeration</b></big> - Enumeration (or enum) is a user defined data type in C. It is mainly used to assign names to integral constants, the names make a program easy to read and maintain. Enumeration tag_name can be used to declare variable of its type.<br>
+<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+enum enum_name{element1,element2,element3,...};
+enum enum_name enum_var;
+          OR
+enum enum_name{element1,element2...}enum_var;
+</div><br>
+<font color="red">IMP Note: By default, the values of elements of an enum type are: 0,1,2,.. and so on in ascending order. User can also provide starting value to the elements of enum type.</font>
+<br>
+<div id="border">Variables of type enum can be defined in two ways:<br>
+<pre class="pre2">enum week{Mon,Tue,Wed};
+enum day;
+       OR
+enum week{Mon,Tue,Wed}day;	   
+</pre>
+</div><br>
+
+<div class="fontbg"><u>Example1:</u></div>
+<div class="bgcolor">
+<PRE>
+<code>
+#include&#60;stdio.h>
+enum week{Mon,Tue,Wed=5,Thur,Fri,Sat,Sun}; 
+int main() 
+{ 
+    enum week day; 
+    day = Wed; 
+    printf("%d",day); 
+    return 0; 
+}  
+Output: 5 
+In the above example, we declared “day” as 
+the variable of type "week" and the value 
+of “Wed” is allocated to day,which is 5.
+So as a result, 5 is printed. 
+Elements following "Wed" will get,
+by default,consecutive values.<br>
+</code>		 
+</PRE>
+</div>
+<br>
+<div class="fontbg"><u>Example2:</u></div>
+<div class="bgcolor">
+<PRE>
+<code>
+Another example of enumeration is:
+enum year{Jan, Feb, Mar, Apr, May, Jun, Jul,  
+          Aug, Sep, Oct, Nov, Dec}; 
+int main() 
+{ 
+   int i; 
+   for (i=Jan; i&#60;=Dec; i++)       
+   printf("%d ", i); 
+   return 0; 
+} 
+Output:
+0 1 2 3 4 5 6 7 8 9 10 11 
+In this example, the for loop will run
+from i = 0 to i = 11, as initially the
+value of i is Jan which is 0 and 
+the value of Dec is 11.
+</code>		 
+</PRE>
+</div>
+<br>
+<b><div class="fontbg">Interesting facts about initialization of enum.</b><br></div>
+<br>
+1. Two enum names can have same value. For example, in the following C program both ‘Failed’ and ‘Freezed’ have same value 0.<br>
+<div class="bgcolor">
+<PRE>
+<code>
+enum State
+{Working = 1,Failed=0,Freezed=0}; 
+int main() 
+{ 
+ printf("%d,%d,%d",Working,Failed,Freezed); 
+ return 0; 
+}
+Output: 1, 0, 0
+</code>		 
+</PRE>
+</div>
+<br>
+2. If we do not explicitly assign values to enum names, the compiler by default assigns values starting from 0.<br> 
+For example, in the following C program, sunday gets value 0, monday gets 1, and so on.<br>
+<div class="bgcolor">
+<PRE>
+<code>
+enum day {sunday,monday,tuesday,}; 
+int main() 
+{ 
+    enum day d = tuesday; 
+    printf("The day number=%d", d); 
+    return 0; 
+} 
+Output: The day number=2
+</code>		 
+</PRE>
+</div>
+<br>
+3. We can assign values to some name in any order. All unassigned names get value as value of previous name plus one.<br>
+<div class="bgcolor">
+<PRE>
+<code>
+enum day {sun = 1, mon, tue=5,}; 
+int main() 
+{ 
+ printf("%d %d %d",sun,mon,tue); 
+ return 0; 
+} 
+Output: 1 2 5 
+</code>		 
+</PRE>
+</div>
+<br>
+4. The value assigned to enum names must be some integeral constant, i.e., the value must be in range from minimum possible integer value to maximum possible integer value.<br>
+<br>
+5. All enum constants must be unique in their scope. For example, the following program fails in compilation.<br>
+<div class="bgcolor">
+<PRE>
+<code>
+enum state  {working, failed}; 
+enum result {failed, passed}; 
+int main()  { return 0; } 
+Output:
+Compile Error: 'failed'
+</code>		 
+</PRE>
+</div>
+</body>
+</html>

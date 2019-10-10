@@ -1,0 +1,78 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Java array:</b></div><br> Java provides a data structure, the array, which stores a fixed-size sequential collection of elements of the same type.<br><br>
+	
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+   1. dataType[] arrayRefVar;   // preferred way.<br>
+		                or<br>
+	 dataType arrayRefVar[];  // works but not preferred way.<br>
+   2.
+	 arrayRefVar = new dataType[arraySize];<br>
+     dataType[] arrayRefVar = {value0, value1, ..., valuek};<br>
+	 </div><br><br> 
+
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+public class TestArray 
+{
+
+	public static void main(String[] args) 
+	{
+		double[] myList = {1.9, 2.9, 3.4, 3.5};
+
+      	// Print all the array elements
+      	for (int i = 0; i &#60; myList.length; i++) {
+        System.out.println(myList[i] + " ");
+      	}
+     
+      	// Summing all elements
+      	double total = 0;
+      	for (int i = 0; i &#60; myList.length; i++) {
+			total += myList[i];
+      	}
+      	System.out.println("Total is " + total);
+ 	}
+}
+Output:
+	1.9
+	2.9
+	3.4
+	3.5
+	Total is 11.7
+</code>		 
+</PRE>
+</div>
+
+<div style="color:red;">
+Important points:<br>
+1. In Java all arrays are dynamically allocated.<br>
+2. Java array can be also be used as a static field, a local variable or a method parameter.
+<br><br> </div>
+
+

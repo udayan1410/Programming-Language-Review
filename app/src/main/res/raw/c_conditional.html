@@ -1,0 +1,205 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<big><b>1)If</big></b> - The "if" statement evaluates the test expression inside the parenthesis.<br>
+<br>
+<ul>
+<li>If the test expression is evaluated to true(1), statements inside the body of "if" is executed.</li>
+<li>If the test expression is evaluated to false(0), statements inside the body of "if" are skipped from execution.</li>
+</ul>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+if(testExpression)</div>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int main()
+{
+int a=5;
+	if(a==5)
+	{
+	printf("Hello World !!!");
+	}
+	return 0;
+}
+Output: Hello World !!!
+</code>
+</PRE>
+</div>
+In case, a is not equal to 5 i.e the "if" condition is false then the statements inside the body of "if" will be skipped i.e "Hello World !!!" will not be displayed.<br>
+<br>
+<font color="green"><u>Did you know?</u> - If you put semi-colon(;) after if(condition) then it will always return true and the immediate next statement after "if" is executed.</font><br>
+<br>
+<hr>
+<br>
+<big><b>2)if-else</big></b> - if-else is used for exception handling. When either of the outcomes (true or false) occur, a particular block of code is to be executed.<br>
+When "if" condition is false, "else" block is executed and when "if" condition is true, "else" block is skipped.<br>
+<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+if(testExpression)
+{<br>
+//statements inside the body of "if"<br>
+}<br>
+else<br>
+{<br>
+//statements inside the body of "else"<br>
+}<br>
+
+</div>
+There are 2 types of if-else statements:
+<ul>
+<li><b><u>if...else Ladder</u></b> - When multiple conditions are to be evaluated if-else ladder is used.</li><br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+if(testExpression1)<br>
+{<br>
+//statement(s)<br>
+}<br>
+else if(testExpression2)<br>
+{<br>
+//statement(s)<br>
+}<br>
+.<br>
+.<br>
+else<br>
+{<br>
+//statement(s)<br>
+}
+</div>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int main()<br>
+{<br>
+int number1, number2;<br>
+printf("Enter two integers: ");<br>
+scanf("%d%d",&number1,&number2);<br>
+if(number1==number2)<br>
+{
+printf("Result: %d=%d",number1,number2);<br>
+}
+else if(number1>number2)<br>
+{
+printf("Result: %d>%d",number1,number2);<br>
+}
+else
+{
+printf("Result: %d<%d",number1,number2);<br>
+}
+return 0;
+}
+Output: 
+Enter two integers: 25
+18
+Result: 25>18
+</code>
+</PRE>
+</div>
+
+<li><b><u>Nested if...else</u></b> - It is possible to include if...else statement inside the body of another if...else statement.</li><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+<PRE>
+<div class="bgcolor">
+int main()
+{<br>
+int number1, number2;
+printf("Enter two integers: ");
+scanf("%d%d",&number1,&number2);
+if(number1>=number2)<br>
+{
+if(number1==number2)
+printf("Result: %d=%d",number1,number2);
+else
+printf("Result: %d>%d",number1,number2);
+}
+else
+{<br>
+printf("Result: %d<%d",number1,number2);<br>
+}<br>
+return 0;<br>
+}<br>
+</ul>
+</code>
+</PRE>
+</div>
+<hr>
+<br>
+<big><b>3)Switch-case</big></b> -
+The if..else..if ladder allows you to execute a block code among many alternatives. If you are checking on the value of a single variable in if...else...if, it is better to use switch statement.<br>
+The switch statement is often faster than nested if...else (not always). Also, the syntax of switch statement is cleaner and easy to understand.<br>
+<br>
+<div class="fontbg"><u>Syntax:</u></div><div id="border">
+switch (n)<br>
+​{<br>
+case constant1: // code to be executed if n is equal to constant1;<br>
+break;<br>
+case constant2: // code to be executed if n is equal to constant2;<br>
+break;<br>
+ . . .<br>
+default: // code to be executed if n doesn't match any constant<br>
+}<br>
+</div>
+<br>
+<font color="red">IMP Note: When a case constant is found that matches the switch expression, control of the program passes to the block of code associated with that case.<br>
+Suppose, the value of n is equal to constant2. The compiler executes the statements after case constant2: until break is encountered. When break statement is encountered, switch statement terminates.
+</font>
+<br>
+<br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int main()<br>
+{
+int x=3;<br>
+switch(x)<br>
+{
+	case 1: printf("Hi\n");
+	break;
+	case 2: printf("Hello!\n");
+	break;
+	case 3: printf("Welcome\n");
+	case 4: printf("Welcome to Pune\n");
+	break;
+default: printf("All the best\n");
+}
+return 0;
+
+}<br>
+Output:<br>
+Welcome<br>
+Welcome to Pune<br>
+</code>
+</PRE>
+</div>
+Here, since there is no "break" statement after case 3, case 4 is also executed and switch statement is terminated as there is "break" after case 4.<br>
+<br>
+<font color="red">IMP Note: When a case constant does NOT match any of the switch expressions then "default" case is executed (provided that it is given in the "switch" body).
+</body>
+</html>

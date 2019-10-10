@@ -1,0 +1,70 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Java inheritance:</b><br>Inheritance can be defined as the process where one class acquires the properties (methods and fields) of another. With the use of inheritance the information is made manageable in a hierarchical order.The class which inherits the properties of other is known as subclass (derived class, child class) and the class whose properties are inherited is known as superclass (base class, parent class).</b></div><br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">class Super {
+   .....
+   .....
+}
+class Sub extends Super {
+   .....
+   .....
+}
+</pre></div><br>
+
+<div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>
+class Employee
+{  
+ float salary=40000;  
+}  
+class Programmer extends Employee
+{  
+  int bonus=10000;  
+  public static void main(String args[])
+ {  
+   Programmer p=new Programmer();  
+   System.out.println("Programmer salary is:"+p.salary);  
+   System.out.println("Bonus of Programmer is:"+p.bonus);  
+ }  
+}  
+
+Output:
+Programmer salary is:40000.0
+Bonus of programmer is:1000
+</code>
+</pre>
+</div>
+
+<div style="color:red;">Important points: <br>
+1. Inheritance represents the IS-A relationship which is also known as a parent-child relationship.<br>
+2. Inheritance is used for method overloading and reusing the code.<br><br>
+
+<div style="color:green;">Did you know? <br>
+1. Multiple inheritance is not supported in java to reduce the complexity of language.

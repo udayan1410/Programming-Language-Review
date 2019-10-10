@@ -1,0 +1,97 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+}
+
+.pre2{
+overflow:scroll;
+}
+
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>Exception</b></div>
+<ul>
+<li>An exception is a run-time error.</li>
+<li>It happens during the execution of a program.</li>
+<li>Exception provide a way to transfer program control from one part to another.</li>
+<li>C++ exception handling is based on 3 keywords : try,catch,throw.</li>
+</ul>
+<br>
+
+<div class="fontbg"><b>Handling Exceptions</div></b>
+<ul>
+
+<li><b>Try Block</b></li>If a block of code may raise exception then the block is surrounded 
+<div class="fontbg"><u>Syntax:</u></div> <div id="border"> try {
+   // protected code
+}
+</div><br>
+<li><b>Throwing Exceptions</b></li>Exceptions can be thrown anywhere within a code block using throw statement. The operand of the throw statement determines a type for the exception and can be any expression and the type of the result of the expression determines the type of exception thrown.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border"> throw "argument";</div><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE>
+<code>
+double division(int a, int b) {
+   if( b == 0 ) {
+      throw "Division error!";
+   }
+   return (a/b);
+}</code>		 
+</PRE>
+</div>
+<li><b>Catching Exceptions</b></li>The catch block following the try block catches any exception. You can specify what type of exception you want to catch and this is determined by the exception declaration that appears in parentheses following the keyword catch.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border"> 
+<pre class="pre2">try {
+   // protected code
+} catch(...) {
+  // code to handle any exception
+}</div><br>
+</pre>
+</ul>
+<div class="bgcolor">
+<PRE>
+<code>
+Example:
+double division(int a, int b) {
+   if( b == 0 ) {
+      throw "Division by zero condition!";
+   }
+   return (a/b);
+}
+
+int main () {
+   int x = 50;
+   int y = 0;
+   double z = 0;
+ 
+   try {
+      z = division(x, y);
+      cout << z << endl;
+   } catch (const char* msg) {
+     cerr << msg << endl;
+   }
+
+   return 0;
+}
+</code>		 
+</PRE>
+</div>
+
+</body>
+</html>

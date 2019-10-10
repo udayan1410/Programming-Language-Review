@@ -1,0 +1,304 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+1499291
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+		 
+
+<div class="fontbg"><b>1] iostream - Standard input/output functions</b></div><br>
+
+<ul><u class="fontbg"><li>cout -</li></u> - It writes formatted data to screen.<br>The cout is used in conjunction with the stream insertion operator(&#60;&#60;).<br>
+
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+cout&#60;&#60;"TEXT";   //For text input
+   OR
+cout&#60;&#60;var_name; //For variables
+</pre>
+</div><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int a=5;
+cout&#60;&#60;"A="&#60;&#60;a;
+Output: A=5</code>		 
+</PRE>
+</div>
+<br><br>
+
+<u class="fontbg"><li>cin -</li></u> - The predefined object cin is an instance of istream class.<br>It reads formatted data from keyboard.<br>
+
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+cin>>var_name;
+</pre>
+</div><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+float m;
+cin>>m;
+</code>		 
+</PRE>
+</div>
+<br><br>
+
+
+
+<div style="color:red;">IMP Note - All syntax in C++ language including cin and cout objects are CASE-SENSITIVE.</div>
+</ul>
+<hr>
+<div class="fontbg"><b>2] string.h - String handling functions</b></div><br>
+<ul>
+<u class="fontbg"><li>strlen()</u></li>It calculates length of string.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+strlen(string1);</div>
+<div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>			
+int k;
+k=strlen("PLR");
+cout&#60;&#60;k;
+Output: 3
+</code>
+</PRE>
+</div>
+
+<u class="fontbg"><li>strcpy()</u></li>It copies the string. Also copies the null character.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+strcpy(string2,string1);</div>
+<div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>			
+char s1[];
+strcpy(s1,"This is SPARTAAA");
+cout&#60;&#60;s1;
+Output: This is SPARTAAA
+</code>
+</PRE>
+</div>
+
+<u class="fontbg"><li>strcat()</u></li>It concatenates i.e merges two strings.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+strcat(string2,string1);</div>
+<div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>			
+char S1[]="HELLO";
+char S2[]="WORLD";
+strcat(S1,S2);
+cout&#60;&#60;String after concatenation is:&#60;&#60;S1;
+Output:
+String after concatenation is: HELLOWORLD
+</code>
+</PRE>
+</div>
+
+
+<u class="fontbg"><li>strupr()</u></li>It converts the string to Uppercase letters.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+strupr(string1);</div>
+<div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>			
+char s1[]="Doggy";
+cout&#60;&#60;strupr(s1);
+Output: DOGGY
+</code>
+</PRE>
+</div>
+
+<u class="fontbg"><li>strlwr()</u></li>It converts the string to lowercase letters.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+strlwr(string1);</div>
+<div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>			
+char s1[]="DOGGY";
+cout&#60;&#60;strlwr(s1);
+Output: doggy
+</code>
+</PRE>
+</div>
+
+</ul></u>
+<hr>
+<div class="fontbg"><b>3] math.h - Mathematical functions</b></div><br>
+<ul>
+<li><u class="fontbg">ceil()</u></li>- It returns a value greater than or equal to x.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">ceil(double x);</div><br>
+ <div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+<PRE class="pre2">
+<code>				
+void main()
+{
+    float val1,val2;
+    val1=1.2;
+    val2=-2.8;
+    cout&#60;&#60;"value1 = "&#60;&#60;ceil(val1));
+    cout&#60;&#60;"value2 = "&#60;&#60;ceil(val2));
+}
+   Output: value1 = 2.0 
+	value2 = -2.0
+</code>
+	</PRE>
+</div>
+<br><br>
+<li><u class="fontbg">floor()</u></li>- It returns a value less than or equal to x.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">floor(double x);</div><br>
+ <div class="fontbg"><u>Example :</u></div>
+ <div class="bgcolor">
+ <PRE class="pre2">
+void main()
+{
+  float val1,val2;
+  val1 = 1.2;
+  val2 = -2.8;
+  cout&#60;&#60;"value1 = \n"&#60;&#60;floor(val1);
+  cout&#60;&#60;"value2 = \n"&#60;&#60;floor(val2);
+}
+  Output: value1 = 1.0 
+   value2 = -3.0
+</PRE>
+</div>
+
+<br><br>								 
+<li><u class="fontbg">log()</u></li>- It returns the natural logarithm (base-e logarithm) of x.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">log(double x);</div><br>
+<div class="fontbg"><u>Example :</u></div> 
+<div class="bgcolor">
+ <PRE class="pre2">
+void main()
+{
+   double x, res;
+   x=2.7;
+   res=log(x);
+   cout&#60;&#60;"log= "&#60;&#60;res;
+}
+Output: log(2.7000) = 0.9932
+</PRE>
+</div>
+
+<br><br>
+<li><u class="fontbg">log10()</u></li>- It returns the common logarithm (base-10 logarithm) of x.<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">log10(double x);</div><br>
+<div class="fontbg"><u>Example :</u></div> 
+<div class="bgcolor">
+<PRE class="pre2">
+void main()
+{
+   double x, res;
+   x=10000;
+   res=log10(x);
+   cout&#60;&#60;"log = "&#60;&#60;res;
+}
+Output: log(10000.0) = 4.0
+</PRE>
+</div>			
+		
+<br><br>
+<li><u class="fontbg">fmod()</u></li>- returns remainder when "x" is divided by "y"<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">fmod(double x, double y)</div><br>
+<div class="fontbg"><u>Example :</u></div> 
+<div class="bgcolor">
+<PRE class="pre2">
+int main () 
+{ 
+   float a, b; 
+   int c; 
+   a = 8.2; 
+   b = 5.7; 
+   c = 3; 
+   cout&#60;&#60;"Remainder = "&#60;&#60;fmod(a, c); 
+   cout&#60;&#60;"Remainder="&#60;&#60;fmod(a, b); 
+     
+   return(0); 
+} 
+
+Output: Remainder of 8.200000 / 3 is 2.200000
+Remainder of 8.200000 / 5.700000 is 2.500000
+</PRE>
+</div>
+<br><br>
+<li><u class="fontbg">sqrt()</u></li>- returns square root of a number<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">double sqrt(double x)</div><br>
+<div class="fontbg"><u>Example :</u></div> 
+<div class="bgcolor">
+<PRE class="pre2">
+int main () 
+{ 
+  
+   cout&#60;&#60;"Square root of 225 is \n", &#60;&#60;sqrt(225.0); 
+   cout&#60;&#60;"Square root of 300 is \n", &#60;&#60;sqrt(300.0); 
+     
+   return(0); 
+} 
+
+Output: Square root of 225.000000 is 15.000000
+Square root of 300.000000 is 17.320508
+</PRE>
+</div>
+
+<br><br>
+<li><u class="fontbg">pow()</u></li>- returns x raised to power of y
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">double pow(double x, double y)</div><br>
+<div class="fontbg"><u>Example :</u></div> 
+<div class="bgcolor">
+<PRE class="pre2">
+int main () 
+{ 
+   cout&#60;&#60;"Value 8.0 ^ 3 ="&#60;&#60;pow(8.0, 3); 
+  
+   cout&#60;&#60;"Value 3.05 ^ 1.98 ="&#60;&#60;pow(3.05, 1.98); 
+     
+   return(0); 
+} 
+
+Output:Value 8.0 ^ 3 = 512.000000
+Value 3.05 ^ 1.98 = 9.097324
+</PRE>
+</div>
+</ul>
+<hr>
+<div class="fontbg"><b>Importance of main() function -</b></div><br>
+Every C program has a primary (main) function that must be named main. It is important that every c program has exactly one main() 
+function or else the program will show an error. The main function serves as the starting point and the end point for program execution.
+It usually controls program execution by directing the calls to other functions in the program.
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+datatype main()
+   { .... }
+     <br>OR<br>
+datatype main(int argc, char *argv[], char *envp[])    //For command-line arguments
+   { .... }
+</div><br><br>
+</div>		
+</body>
+</html>

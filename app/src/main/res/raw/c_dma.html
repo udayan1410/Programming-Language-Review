@@ -1,0 +1,145 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+}
+.pre2{
+overflow:scroll;
+}
+
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Dynamic Memory Allocation-</b></div>
+Dynamic Memory Allocation or DMA allows the programmer to allocate memory to a data structure during run time.<br>
+It has 4 functions.<br>
+1.malloc()<br>
+2.calloc()<br>
+3.realloc()<br>
+4.free()
+<br>
+<br>
+The difference between static memory allocation and dynamic memory allocation : 
+<table border="1px">
+
+<tr style="background-color:lightgrey"><th>Static Memory Allocation</th><th>Dynamic Memory Allocation</th></tr>
+<tr><td>memory is allocated at compile time.</td><td>memory is allocated at run time.</td></tr>
+<tr><td>memory can't be increased while executing program.</td><td>memory can be increased while executing program.</td></tr>
+<tr><td>used in array.</td><td>used in linked list.</td></tr>
+</table>
+<br>
+<b>Types of functions in DMA:</b><br>
+
+<ul><u class="fontbg"><li>malloc function-</li></u>
+1.The malloc() function allocates single block of requested memory.<br>
+2.It doesn't initialize memory at execution time, so it has garbage value initially.<br>
+3.It returns NULL if memory is not sufficient.<br><br>
+<div class="fontbg"><u>Syntax:</u></div><div id="border">
+ptr=(cast-type*)malloc(byte-size)</div><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int main(){  
+  int n,i,*ptr,sum=0;    
+  printf("Enter number of elements: ");    
+  scanf("%d",&n);    
+  ptr=(int*)malloc(n*sizeof(int));
+  if(ptr==NULL)                         
+  {    
+   printf("Unable to allocate memory");    
+   exit(0);    
+  }    
+  printf("Enter elements of array: ");    
+  for(i=0;i&#60;n;++i)    
+  {
+    scanf("%d",ptr+i);    
+    sum+=*(ptr+i);    
+  }    
+  printf("Sum=%d",sum);    
+  free(ptr);     
+return 0;  
+}    
+Output:
+Enter elements of array: 3
+Enter elements of array: 10
+10
+10
+Sum=30	 
+</code>
+</PRE>
+</div>
+<br>
+<u class="fontbg"><li>calloc function-</li></u>
+1.The calloc() function allocates multiple block of requested memory.<br>
+2.It initially initialize all bytes to zero.<br>
+3.It returns NULL if memory is not sufficient.<br><br>
+<div class="fontbg"><u>Syntax:</u></div><div id="border">
+ptr=(cast-type*)calloc(number, byte-size)  </div><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+int main(){  
+ int n,i,*ptr,sum=0;    
+  printf("Enter number of elements: ");    
+  scanf("%d",&n);    
+  ptr=(int*)calloc(n,sizeof(int));  
+  if(ptr==NULL)                         
+  {    
+    printf("Unable to allocate memory");    
+    exit(0);    
+  }    
+  printf("Enter elements of array: ");    
+  for(i=0;i&#60;n;++i)    
+  {    
+   scanf("%d",ptr+i);    
+   sum+=*(ptr+i);    
+  }    
+  printf("Sum=%d",sum);    
+  free(ptr);    
+return 0;  
+}    
+Output:
+
+Enter elements of array: 3
+Enter elements of array: 10
+10
+10
+Sum=30
+</code>
+</PRE>
+</div>
+<br>
+
+<u class="fontbg"><li>realloc function-</li></u>
+If memory is not sufficient for malloc() or calloc(), you can reallocate the memory by realloc() function. In short, it changes the memory size.<br><br>
+<div class="fontbg"><u>Syntax:</u></div><div id="border">
+ptr=realloc(ptr, new-size) 
+</div><br>
+
+<u class="fontbg"><li>
+free()</u>-</li>
+The memory occupied by malloc() or calloc() functions must be released by calling free() function. Otherwise, it will consume memory until program exit.
+<div class="fontbg"><u><br>
+Syntax:</u></div><div id="border">
+free(ptr) </div><br>
+</ul>
+
+
+</body>
+</html>

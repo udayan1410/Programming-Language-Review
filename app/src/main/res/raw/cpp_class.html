@@ -1,0 +1,64 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+
+<div class="fontbg"><b>Class:</b></div>Class is a user defined data type. It is a collection of data members and function members. When you define a class, you define a blueprint for a data type. This doesn't actually define any data, but it does define what the class name means, that is, what an object of the class will consist of and what operations can be performed on such an object. A class definition starts with the keyword class followed by the class name; and the class body, enclosed by a pair of curly braces. A class definition must be ended either by a semicolon or a list of declarations.
+<br><br>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>
+class Box
+{
+public:
+double length; // Length of a box
+double breadth; // Breadth of a box
+double height; // Height of a box
+};
+
+</code>		 
+</PRE>
+</div>
+
+The keyword public determines the access attributes of the members of the class that follow it. A public member can be accessed from outside the class anywhere within the scope of the class object. You can also specify the members of a class as private or protected.
+<br><br><hr>
+<div class="fontbg"><b>Object:</b></div>It is a basic runtime entity in object oriented systems.
+Object is a instance of type class. Object is a variable of type class. A class provides the blueprints for objects, so basically an object is created from a class. We declare objects of a class with exactly the same sort of declaration that we declare variables of basic types.
+<br><b>Following statements declare two objects of class Box:</b>
+<br>Box Box1; //Declare Box1 of type Box
+<br>Box Box2; // Declare Box2 of type Box
+<br>Both of the objects Box1 and Box2 will have their own copy of data members.
+<br><br><hr>
+<div class="fontbg"><b>Access specifiers</b></div>
+C++ offers the possibility to control access to class members and functions by using access specifiers. Access specifiers are used for protecting data from misuse.
+<br>
+<b>Private :</b>A member (either data member or member function) declared in a private section of a class can only be accessed by member functions and friends of that class.
+<br>
+<b>Protected :</b>A member (either data member or member function) declared in a protected section of a class can only be accessed by member functions and friends of that class, and by member functions and friends of derived classes. 
+<br>
+<b>Public :</b>A member (either data member or member function) declared in a public section of a class can be accessed by anyone.
+
+</body>
+</html>

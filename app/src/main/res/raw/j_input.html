@@ -1,0 +1,129 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+</style>
+<div class="fontbg"><b>Accepting input in java:</b></div><br>The java.io package contains nearly every class you might ever need to perform input and output (I/O) in Java.<br><br>
+
+	There are various ways to accept input from keyboard in java,
+			<ul><u class="fontbg"><li>Using Scanner Class:</li></u> 
+				The main purpose of the Scanner class is to parse primitive types and strings using regular expressions, 
+			  however it is also can be used to read input from the user in the command line.
+
+				<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+				
+					Scanner a = new Scanner(System.in);<br>
+					System.out.print("Enter your name: ");<br>>
+					String name = a.nextLine();<br>
+					</div><br><br> 
+ 
+
+			<u class="fontbg"> <li>Using Console Class:</li></u>  
+				This can be used for reading password-like input without echoing the characters entered by the user; 
+			 the format string syntax can also be used (like System.out.printf()).
+
+				<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+					Console c = System.console();<br>
+					System.out.print("Enter your name: ");<br>
+					String name = c.readLine();<br>
+					</div><br><br> 
+
+
+			<u class="fontbg"> <li>Using InputStreamReader and BufferedReader Class:</li></u> 
+				This method is used by wrapping the System.in (standard input stream)
+			  in an InputStreamReader which is wrapped in a BufferedReader, we can read input from the user in the command line.
+			  
+			  <div class="fontbg"><u>Syntax:</u></div> <div id="border">
+
+					BufferedReader r= new BufferedReader(new InputStreamReader(System.in));<br>
+					System.out.print("Enter your name: ");<br>
+ 					String name = r.readLine();<br>
+					</div><br><br>
+</ul>
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code>					
+import java.util.Scanner;
+import java.io.BufferedReader; 
+import java.io.IOException; 
+import java.io.InputStreamReader;
+import java.io.Console; 
+
+class GetInputFromUser
+{
+	public static void main(String args[])
+	{
+	int a;
+	float b;
+	String s;
+
+	//Using scanner class
+	Scanner in = new Scanner(System.in);
+	System.out.println("Enter an integer");
+	a = in.nextInt();
+	System.out.println("Enter a float");
+	b = in.nextFloat();
+	System.out.println("Enter a string");
+	s = in.nextLine();
+	System.out.println("You entered integer: " + a);
+	System.out.println("You entered float: " + b);
+	System.out.println("You entered string: " + s);
+
+	//Using BufferedReader class
+	BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
+	System.out.println("Enter your name: ");
+	String name = reader.readLine();
+    System.out.println(name);       
+       
+	//Using Console class
+	Console con = System.console();    
+	System.out.println("Enter programming skills ");
+	String skills = con.readLine();    
+	System.out.println("Your skills are "+skills);  
+ 	}
+      
+}
+
+OUTPUT:
+
+	Enter an integer
+	20
+	Enter a float
+	2.2
+	Enter a string
+	apple
+	You entered integer: 20
+	You entered float: 2.2
+	You entered string: apple
+	Enter your name: 
+	Geek
+	Geek
+	Enter programming skills
+	c,c++,java,android
+	Your Skills are c,c++,java,android
+</code>		 
+</PRE>
+</div>
+
+		

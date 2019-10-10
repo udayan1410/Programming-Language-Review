@@ -1,0 +1,83 @@
+<html>
+<body>
+<style>
+
+body{
+color:#363838
+}
+
+.fontbg
+{
+font-size: 20px;
+}
+
+#border{
+border:2px solid black;
+background-color: lightgrey;
+
+}
+.pre2{
+overflow:scroll;
+}
+.bgcolor{
+background-color: lightgrey;
+}
+
+.imgprop{
+	max-width: 100%;
+    max-height: 100%;
+}
+</style>
+
+
+<div class="fontbg"><b>Java Exceptions:</b></div><br> An exception is an unwanted or unexpected event, which occurs during the execution of a program i.e at run time, that disrupts the normal flow of the program’s instructions.Some of these exceptions are caused by user error, others by programmer error, and others by physical resources that have failed in some manner.<br><br>
+<img src="./s13img.jpg" class="imgprop"> <br><br><br>
+<b>There are 3 types of exceptions:<br></b>
+<b>1. Checked exceptions</b>- A checked exception is an exception that is checked (notified) by the compiler at compilation-time, these are also called as compile time exceptions.<br>
+<b>2. Unchecked exceptions</b>- An unchecked exception is an exception that occurs at the time of execution. These are also called as Runtime Exceptions.<br>
+<b>3. Errors</b>- These are not exceptions at all, but problems that arise beyond the control of the user or the programmer.<br>
+<br>
+<b>Throw keyword:</b><br> 
+If a method does not handle a checked exception, the method must declare it using the throws keyword.The throws keyword appears at the end of a method's signature.<br>
+<br><b>Finally keyword:</b><br> 
+A finally block of code always executes, irrespective of occurrence of an Exception. Using a finally block allows you to run any cleanup-type statements that you want to execute, no matter what happens in the protected code.<br> 
+A method catches an exception using a combination of the try and catch keywords. A try/catch block is placed around the code that might generate an exception.<br>
+<br>
+<div class="fontbg"><u>Syntax:</u></div> <div id="border">
+<pre class="pre2">
+  try {
+  // Protected code
+      } 
+  catch (ExceptionName e1) 
+   {
+   // Catch block
+   }
+   </pre>
+ </div><br><br>   
+<div class="fontbg"><u>Example:</u></div>
+<div class="bgcolor">
+<PRE class="pre2">
+<code> 
+public class ExcepTest {
+
+   public static void main(String args[]) {
+      int a[] = new int[2];
+      try {
+         System.out.println("Access element three :" + a[3]);
+      } catch (ArrayIndexOutOfBoundsException e) {
+         System.out.println("Exception thrown  :" + e);
+      }finally {
+         a[0] = 6;
+         System.out.println("First element value: " + a[0]);
+         System.out.println("The finally statement is executed");
+      }
+   }
+}
+
+Output: Exception thrown  :java.lang.ArrayIndexOutOfBoundsException: 3
+	First element value: 6
+	The finally statement is executed
+</code>		 
+</PRE>
+</div>	
+
